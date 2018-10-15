@@ -5,10 +5,10 @@ import { AppComponent } from './app.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { FpasswordComponent } from './fpassword/fpassword.component';
-import { InformationComponent } from './homepage/information/information.component';
-import { OrderComponent } from './homepage/order/order.component';
-import { StatusComponent } from './homepage/status/status.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { InformationComponent } from './information/information.component';
+import { OrderComponent } from './order/order.component';
+import { StatusComponent } from './status/status.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import { AppRoutingModule } from './/app-routing.module';
     FpasswordComponent,
     InformationComponent,
     OrderComponent,
-    StatusComponent
+    StatusComponent,
+
   ],
   imports: [
     BrowserModule,
