@@ -8,10 +8,12 @@ export interface InformationTableItem {
   name: string;
   id: number;
   shipName: string;
+
 }
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: InformationTableItem[] = [
+
   {id: 1, name: 'Hydrogen', shipName: 'A'},
   {id: 2, name: 'Helium', shipName: 'B'},
   {id: 3, name: 'Lithium', shipName: 'C'},
