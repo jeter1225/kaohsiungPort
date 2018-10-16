@@ -16,6 +16,11 @@ export class FpasswordComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  confir() {
+    confirm("密碼已送至您的手機簡訊！")
+  }
+  
   goBack() {
   	this.location.back();
   }

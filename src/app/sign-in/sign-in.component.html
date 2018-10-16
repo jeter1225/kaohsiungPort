@@ -1,6 +1,13 @@
-<button>
-  <a [routerLink]="['/homepage']" >homepage</a>
+<div class = "input">帳號
+<input #inputAccount type = "text">
+</div>
+<div class = "input">密碼
+<input #inputPassword type = "text">
+</div>
+
+<button class = signin-homepage>
+  <a routerLink = "/homepage" >登入</a>
 </button>
-<button>
-  <a [routerLink]="['/fpassword']" >fpassword</a>
+<button class = "signin-fpassword">
+  <a routerLink = "/fpassword" >忘記密碼</a>
 </button>
