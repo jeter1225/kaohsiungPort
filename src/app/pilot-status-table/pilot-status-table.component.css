@@ -1,0 +1,12 @@
+.pilotStatusTable {
+    margin: 20px auto;
+    overflow: auto;
+}
+
+#table {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}

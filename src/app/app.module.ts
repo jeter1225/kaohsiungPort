@@ -5,17 +5,17 @@ import { AppComponent } from './app.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { FpasswordComponent } from './fpassword/fpassword.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { InformationComponent } from './information/information.component';
-import { OrderComponent } from './order/order.component';
-import { StatusComponent } from './status/status.component';
+import { PilotOrderComponent } from './pilot-order/pilot-order.component';
+import { PilotStatusComponent } from './pilot-status/pilot-status.component';
 import { ConfigLogService } from './config-log.service';
 import { Hero } from './hero';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { InformationTableComponent } from './information-table/information-table.component';
 import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
+import { PilotStatusTableComponent } from './pilot-status-table/pilot-status-table.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +24,9 @@ import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/mate
     HomepageComponent,
     FpasswordComponent,
     InformationComponent,
-    OrderComponent,
-    StatusComponent,
-    InformationTableComponent,
+    PilotOrderComponent,
+    PilotStatusComponent,
+    PilotStatusTableComponent,
   ],
   imports: [
     BrowserModule,
