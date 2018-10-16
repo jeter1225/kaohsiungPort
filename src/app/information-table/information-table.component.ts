@@ -13,7 +13,9 @@ export class InformationTableComponent implements OnInit {
   dataSource: InformationTableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+
+  displayedColumns = ['id', 'name', 'shipName'];
+
 
   ngOnInit() {
     this.dataSource = new InformationTableDataSource(this.paginator, this.sort);
