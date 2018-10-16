@@ -9,7 +9,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class ConfigLogService {
 
-  private heroesUrl = 'api/eroes'
+  private heroesUrl = 'api/heroes';
 
   constructor(
   	private http: HttpClient,
