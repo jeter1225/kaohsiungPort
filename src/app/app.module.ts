@@ -10,14 +10,12 @@ import { InformationComponent } from './information/information.component';
 import { PilotOrderComponent } from './pilot-order/pilot-order.component';
 import { PilotStatusComponent } from './pilot-status/pilot-status.component';
 import { ConfigLogService } from './config-log.service';
-import { Hero } from './hero';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 import { PilotStatusTableComponent } from './pilot-status-table/pilot-status-table.component';
-import { InformationTableComponent } from './information-table/information-table.component';
-
+import { InformationTableComponent } from './Information-table/information-table.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +27,7 @@ import { InformationTableComponent } from './information-table/information-table
     PilotOrderComponent,
     PilotStatusComponent,
     PilotStatusTableComponent,
-    InformationTableComponent,
-
+    InformationTableComponent
   ],
   imports: [
     BrowserModule,

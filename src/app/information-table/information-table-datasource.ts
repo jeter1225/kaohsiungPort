@@ -18,7 +18,7 @@ export interface InformationTableItem {
   anchorTime_anchorPosition_bowThruster: string;
   bringCable_dispatchStation: string;
   previousPort_nextPort: string;
-  guideBoatRemark: 
+  guideBoatRemark: string;
 }
 
 // TODO: replace this with real data from your application
@@ -87,8 +87,9 @@ export class InformationTableDataSource extends DataSource<InformationTableItem>
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
+        /*case 'name': return compare(a.name, b.name, isAsc);
         case 'id': return compare(+a.id, +b.id, isAsc);
+        */
         default: return 0;
       }
     });
