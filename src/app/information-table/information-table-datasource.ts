@@ -5,35 +5,26 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 
 // TODO: Replace this with your own data model type
 export interface InformationTableItem {
-  name: string;
-  id: number;
-  shipName: string;
+  applyTime_vslSituation_serialNumber: string;
+  vslName: string;
+  pilot: string;
+  vslNumber_voyage_mooringInTransferOut: string;
+  status_pilotNumber_way_nearSpan: string;
+  tugboat_tons: string;
+  agentCodeName_dangerousVsl: string;
+  departureTime: string;
+  frontWaterline_HinderWaterline: string;
+  latestModifyDepartureTime_vslAge: string;
+  anchorTime_anchorPosition_bowThruster: string;
+  bringCable_dispatchStation: string;
+  previousPort_nextPort: string;
+  guideBoatRemark: string;
 
 }
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: InformationTableItem[] = [
 
-  {id: 1, name: 'Hydrogen', shipName: 'A'},
-  {id: 2, name: 'Helium', shipName: 'B'},
-  {id: 3, name: 'Lithium', shipName: 'C'},
-  {id: 4, name: 'Beryllium', shipName: 'D'},
-  {id: 5, name: 'Boron', shipName: 'E'},
-  {id: 6, name: 'Carbon', shipName: 'F'},
-  {id: 7, name: 'Nitrogen', shipName: 'G'},
-  {id: 8, name: 'Oxygen', shipName: 'H'},
-  {id: 9, name: 'Fluorine', shipName: 'I'},
-  {id: 10, name: 'Neon', shipName: 'J'},
-  {id: 11, name: 'Sodium', shipName: 'K'},
-  {id: 12, name: 'Magnesium', shipName: 'L'},
-  {id: 13, name: 'Aluminum', shipName: 'M'},
-  {id: 14, name: 'Silicon', shipName: 'N'},
-  {id: 15, name: 'Phosphorus', shipName: 'O'},
-  {id: 16, name: 'Sulfur', shipName: 'P'},
-  {id: 17, name: 'Chlorine', shipName: 'Q'},
-  {id: 18, name: 'Argon', shipName: 'R'},
-  {id: 19, name: 'Potassium', shipName: 'S'},
-  {id: 20, name: 'Calcium', shipName: 'T'},
 ];
 
 /**
@@ -68,6 +59,7 @@ export class InformationTableDataSource extends DataSource<InformationTableItem>
     return merge(...dataMutations).pipe(map(() => {
       return this.getPagedData(this.getSortedData([...this.data]));
     }));
+    
   }
 
   /**
@@ -97,8 +89,9 @@ export class InformationTableDataSource extends DataSource<InformationTableItem>
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
+        /*case 'name': return compare(a.name, b.name, isAsc);
         case 'id': return compare(+a.id, +b.id, isAsc);
+        */
         default: return 0;
       }
     });
