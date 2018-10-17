@@ -17,7 +17,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 import { PilotStatusTableComponent } from './pilot-status-table/pilot-status-table.component';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { InformationTableComponent } from './information-table/information-table.component';
+=======
+>>>>>>> 0bb16bc21b974ae509645a74069aa5910ecd06ba
 =======
 >>>>>>> 0bb16bc21b974ae509645a74069aa5910ecd06ba
 
@@ -32,7 +35,10 @@ import { InformationTableComponent } from './information-table/information-table
     PilotStatusComponent,
     PilotStatusTableComponent,
 <<<<<<< HEAD
+<<<<<<< HEAD
     InformationTableComponent,
+=======
+>>>>>>> 0bb16bc21b974ae509645a74069aa5910ecd06ba
 =======
 >>>>>>> 0bb16bc21b974ae509645a74069aa5910ecd06ba
   ],
