@@ -4,8 +4,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { FpasswordComponent } from './fpassword/fpassword.component';
 import { InformationComponent } from './information/information.component';
-import { OrderComponent } from './order/order.component';
-import { StatusComponent } from './status/status.component';
+import { PilotOrderComponent } from './pilot-order/pilot-order.component';
+import { PilotStatusComponent } from './pilot-status/pilot-status.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
@@ -15,8 +15,8 @@ const routes: Routes = [
     component: HomepageComponent,
     children:[
       { path: 'information', component: InformationComponent },
-      { path: 'order', component: OrderComponent },
-      { path: 'status', component: StatusComponent }
+      { path: 'order', component: PilotOrderComponent },
+      { path: 'status', component: PilotStatusComponent }
     ]
   },
   { path: 'fpassword', component: FpasswordComponent }
@@ -29,4 +29,4 @@ const routes: Routes = [
   declarations: []
 })
 export class AppRoutingModule { }
-export const routingComponents = [ InformationComponent, OrderComponent, StatusComponent ]
+export const routingComponents = [ InformationComponent, PilotOrderComponent, PilotStatusComponent ]

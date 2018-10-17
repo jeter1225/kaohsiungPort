@@ -13,13 +13,10 @@ export class InformationTableComponent implements OnInit {
   dataSource: InformationTableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-
   displayedColumns = ['applyTime_vslSituation_serialNumber', 'vslName', 'pilot', 'vslNumber_voyage_mooringInTransferOut',
-                      'status_pilotNumber_way_nearSpan', 'tugboat_tons', 'agentCodeName_dangerousVsl', 'departureTime',
-                      'frontWaterline_HinderWaterline', 'latestModifyDepartureTime_vslAge', 'anchorTime_anchorPosition_bowThruster',
-                      'bringCable_dispatchStation', 'previousPort_nextPort', 'guideBoatRemark'
-                     ];
-
+  'status_pilotNumber_way_nearSpan', 'tugboat_tons', 'agentCodeName_dangerousVsl', 'departureTime',
+  'frontWaterline_HinderWaterline', 'latestModifyDepartureTime_vslAge', 'anchorTime_anchorPosition_bowThruster',
+  'bringCable_dispatchStation', 'previousPort_nextPort', 'guideBoatRemark'];
 
   ngOnInit() {
     this.dataSource = new InformationTableDataSource(this.paginator, this.sort);

@@ -19,7 +19,6 @@ export interface InformationTableItem {
   bringCable_dispatchStation: string;
   previousPort_nextPort: string;
   guideBoatRemark: string;
-
 }
 
 // TODO: replace this with real data from your application
@@ -59,7 +58,6 @@ export class InformationTableDataSource extends DataSource<InformationTableItem>
     return merge(...dataMutations).pipe(map(() => {
       return this.getPagedData(this.getSortedData([...this.data]));
     }));
-    
   }
 
   /**
