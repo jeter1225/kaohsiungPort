@@ -15,23 +15,22 @@ export interface PilotStatusTableItem {
   leave: string;
 }
 
-// TODO: replace this with real data from your application
-const EXAMPLE_DATA: PilotStatusTableItem[] = [];
-
 /**
  * Data source for the StatusTable view. This class should
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
 export class PilotStatusTableDataSource extends DataSource<PilotStatusTableItem> {  
-  private configLogService: ConfigLogService;
-
+  
   data: PilotStatusTableItem[];
 
-  constructor(private paginator: MatPaginator, private sort: MatSort) {
-    super();
+  fetchData() {
     this.configLogService.getPilotStatusList()
     .subscribe(pilot_status_list => this.data = pilot_status_list);
+  }
+
+  constructor(private paginator: MatPaginator, private sort: MatSort,private configLogService: ConfigLogService) {
+    super();
   }
   
   /**
