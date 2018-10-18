@@ -18,7 +18,6 @@ import { FormsModule} from '@angular/forms'
 import { PilotStatusTableComponent } from './pilot-status-table/pilot-status-table.component';
 import { InformationTableComponent } from './information-table/information-table.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort } from '@angular/material';
 import { PilotStatusTableDataSource } from './pilot-status-table-datasource';
+import { ConfigLogService } from '../config-log.service';
 
 @Component({
   selector: 'app-pilot-status-table',

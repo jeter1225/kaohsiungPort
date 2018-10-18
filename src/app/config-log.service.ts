@@ -9,16 +9,16 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class ConfigLogService {
 
-  private heroesUrl = 'api/heroes';
+  private pilotStatusUrl = 'api/pilot_status_list';
 
   constructor(
   	private http: HttpClient,
   ) { }
 
   getHeroes(): Observable<Hero[]> {
-  	return this.http.get<Hero[]>(this.heroesUrl)
+  	return this.http.get<Hero[]>(this.pilotStatusUrl)
   	.pipe(
-  		tap(heroes => this.log('fetched hero')),
+  		tap(pilot_status_list => this.log('fetched hero')),
   		catchError(this.handleError('getHeroes', []))
   	);
   }
