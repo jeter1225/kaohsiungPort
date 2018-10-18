@@ -1,7 +1,7 @@
 import { DataSource } from '@angular/cdk/collections';
 import { MatPaginator, MatSort } from '@angular/material';
 import { map } from 'rxjs/operators';
-import { Observable, of as ObservableOf, merge } from 'rxjs';
+import { Observable, of as observableOf, merge } from 'rxjs';
 
 // TODO: Replace this with your own data model type
 export interface PilotStatusTableItem {
@@ -59,7 +59,7 @@ export class PilotStatusTableDataSource extends DataSource<PilotStatusTableItem>
     // Combine everything that affects the rendered data into one update
     // stream for the data-table to consume.
     const dataMutations = [
-      ObservableOf(this.data),
+      observableOf(this.data),
       this.paginator.page,
       this.sort.sortChange
     ];
