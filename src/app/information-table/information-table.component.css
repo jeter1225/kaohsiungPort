@@ -27,6 +27,7 @@ mat-footer-row mat-footer-cell{
     justify-content: center;
     font-style: italic;
 }
+
 .search-form-field{
     width: 60%;
     margin-left: 5px;
