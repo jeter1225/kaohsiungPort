@@ -15,7 +15,7 @@ import { InMemoryDataService }  from './in-memory-data.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 import { PilotStatusTableComponent } from './pilot-status-table/pilot-status-table.component';
-import { InformationTableComponent } from './Information-table/information-table.component';
+import { InformationTableComponent } from './information-table/information-table.component';
 
 @NgModule({
   declarations: [
