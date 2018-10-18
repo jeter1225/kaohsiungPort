@@ -8,17 +8,27 @@ export class InMemoryDataService implements InMemoryDbService {
   
   createDb() {
   	const pilot_status_list = [
-  		{ pilot_id: 11, name: 'A', ship_id: 'Ship A', status: 'waiting', night_shift: '1'},
-			{ pilot_id: 12, name: 'B', ship_id: 'Ship B', status: 'working', night_shift: '0'},
-			{ pilot_id: 13, name: 'C', ship_id: 'Ship C', status: 'waiting', night_shift: '1'},
-			{ pilot_id: 14, name: 'D', ship_id: 'Ship D', status: 'working', night_shift: '0'},
-			{ pilot_id: 15, name: 'E', ship_id: 'Ship E', status: 'waiting', night_shift: '1'},
-			{ pilot_id: 16, name: 'F', ship_id: 'Ship F', status: 'working', night_shift: '0'},
-			{ pilot_id: 17, name: 'G', ship_id: 'Ship G', status: 'waiting', night_shift: '1'},
-			{ pilot_id: 18, name: 'H', ship_id: 'Ship H', status: 'working', night_shift: '0'},
-			{ pilot_id: 19, name: 'I', ship_id: 'Ship I', status: 'waiting', night_shift: '1'},
-			{ pilot_id: 20, name: 'J', ship_id: 'Ship J', status: 'working', night_shift: '0'}
-  	];
+			{ pilot_id: 1, name: 'Hydrogen', ship_id: '061646', status: '待命中', night_shift: '1', leave: '請假', break: '掛牌' },
+			{ pilot_id: 2, name: 'Helium', ship_id: '257385', status: '工作中', night_shift: '2', leave: '請假', break: '掛牌' },
+			{ pilot_id: 3, name: 'Lithium', ship_id: '285953', status: '工作中', night_shift: '1', leave: '請假', break: '掛牌' },
+			{ pilot_id: 4, name: 'Beryllium', ship_id: '893635', status: '請假中', night_shift: '1', leave: '請假', break: '掛牌' },
+			{ pilot_id: 5, name: 'Boron', ship_id: '104853', status: '掛牌', night_shift: '1', leave: '請假', break: '掛牌' },
+			{ pilot_id: 6, name: 'Carbon', ship_id: '594732', status: '已簽船', night_shift: '0', leave: '請假', break: '掛牌' },
+			{ pilot_id: 7, name: 'Nitrogen', ship_id: '503827', status: '休假', night_shift: '1', leave: '請假', break: '掛牌' },
+			{ pilot_id: 8, name: 'Oxygen', ship_id: '038598', status: '請假有代班', night_shift: '0', leave: '請假', break: '掛牌' },
+			{ pilot_id: 9, name: 'Fluorine', ship_id: '019372', status: '請假無代班', night_shift: '0', leave: '請假', break: '掛牌' },
+			{ pilot_id: 10, name: 'Neon', ship_id: '772847', status: '待命中', night_shift: '1', leave: '請假', break: '掛牌' },
+			{ pilot_id: 11, name: 'Sodium', ship_id: '598273', status: '待命中', night_shift: '2', leave: '請假', break: '掛牌' },
+			{ pilot_id: 12, name: 'Magnesium', ship_id: '345232', status: '工作中', night_shift: '0', leave: '請假', break: '掛牌' },
+			{ pilot_id: 13, name: 'Aluminum', ship_id: '093726', status: '請假有代班', night_shift: '0', leave: '請假', break: '掛牌' },
+			{ pilot_id: 14, name: 'Silicon', ship_id: '947262', status: '休假', night_shift: '1', leave: '請假', break: '掛牌' },
+			{ pilot_id: 15, name: 'Phosphorus', ship_id: '947262', status: '掛牌', night_shift: '2', leave: '請假', break: '掛牌' },
+			{ pilot_id: 16, name: 'Sulfur', ship_id: '993716', status: '工作中', night_shift: '0', leave: '請假', break: '掛牌' },
+			{ pilot_id: 17, name: 'Chlorine', ship_id: '502827', status: '待命中', night_shift: '2', leave: '請假', break: '掛牌' },
+			{ pilot_id: 18, name: 'Argon', ship_id: '384726', status: '掛牌', night_shift: '1', leave: '請假', break: '掛牌' },
+			{ pilot_id: 19, name: 'Potassium', ship_id: '592777', status: '工作中', night_shift: '0', leave: '請假', break: '掛牌' },
+			{ pilot_id: 20, name: 'Calcium', ship_id: '088323', status: '待命中', night_shift: '0', leave: '請假', break: '掛牌' }
+		];
   	return { pilot_status_list };
   }
 

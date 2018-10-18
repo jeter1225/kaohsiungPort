@@ -1,12 +1,13 @@
 import { DataSource } from '@angular/cdk/collections';
 import { MatPaginator, MatSort } from '@angular/material';
 import { map } from 'rxjs/operators';
-import { Observable, of as observableOf, merge } from 'rxjs';
+import { Observable, of as observableOf, merge } from 'rxjs'
+import { ConfigLogService } from '../config-log.service';
 
 // TODO: Replace this with your own data model type
 export interface PilotStatusTableItem {
-  name: string;
   pilot_id: number;
+  name: string;
   ship_id: string;
   status: string;
   night_shift: string;
@@ -15,41 +16,24 @@ export interface PilotStatusTableItem {
 }
 
 // TODO: replace this with real data from your application
-const EXAMPLE_DATA: PilotStatusTableItem[] = [
-  { pilot_id: 1, name: 'Hydrogen', ship_id: '061646', status: '待命中', night_shift: '1', leave: '請假', break: '掛牌' },
-  { pilot_id: 2, name: 'Helium', ship_id: '257385', status: '工作中', night_shift: '2', leave: '請假', break: '掛牌' },
-  { pilot_id: 3, name: 'Lithium', ship_id: '285953', status: '工作中', night_shift: '1', leave: '請假', break: '掛牌' },
-  { pilot_id: 4, name: 'Beryllium', ship_id: '893635', status: '請假中', night_shift: '1', leave: '請假', break: '掛牌' },
-  { pilot_id: 5, name: 'Boron', ship_id: '104853', status: '掛牌', night_shift: '1', leave: '請假', break: '掛牌' },
-  { pilot_id: 6, name: 'Carbon', ship_id: '594732', status: '已簽船', night_shift: '0', leave: '請假', break: '掛牌' },
-  { pilot_id: 7, name: 'Nitrogen', ship_id: '503827', status: '休假', night_shift: '1', leave: '請假', break: '掛牌' },
-  { pilot_id: 8, name: 'Oxygen', ship_id: '038598', status: '請假有代班', night_shift: '0', leave: '請假', break: '掛牌' },
-  { pilot_id: 9, name: 'Fluorine', ship_id: '019372', status: '請假無代班', night_shift: '0', leave: '請假', break: '掛牌' },
-  { pilot_id: 10, name: 'Neon', ship_id: '772847', status: '待命中', night_shift: '1', leave: '請假', break: '掛牌' },
-  { pilot_id: 11, name: 'Sodium', ship_id: '598273', status: '待命中', night_shift: '2', leave: '請假', break: '掛牌' },
-  { pilot_id: 12, name: 'Magnesium', ship_id: '345232', status: '工作中', night_shift: '0', leave: '請假', break: '掛牌' },
-  { pilot_id: 13, name: 'Aluminum', ship_id: '093726', status: '請假有代班', night_shift: '0', leave: '請假', break: '掛牌' },
-  { pilot_id: 14, name: 'Silicon', ship_id: '947262', status: '休假', night_shift: '1', leave: '請假', break: '掛牌' },
-  { pilot_id: 15, name: 'Phosphorus', ship_id: '947262', status: '掛牌', night_shift: '2', leave: '請假', break: '掛牌' },
-  { pilot_id: 16, name: 'Sulfur', ship_id: '993716', status: '工作中', night_shift: '0', leave: '請假', break: '掛牌' },
-  { pilot_id: 17, name: 'Chlorine', ship_id: '502827', status: '待命中', night_shift: '2', leave: '請假', break: '掛牌' },
-  { pilot_id: 18, name: 'Argon', ship_id: '384726', status: '掛牌', night_shift: '1', leave: '請假', break: '掛牌' },
-  { pilot_id: 19, name: 'Potassium', ship_id: '592777', status: '工作中', night_shift: '0', leave: '請假', break: '掛牌' },
-  { pilot_id: 20, name: 'Calcium', ship_id: '088323', status: '待命中', night_shift: '0', leave: '請假', break: '掛牌' }
-];
+const EXAMPLE_DATA: PilotStatusTableItem[] = [];
 
 /**
  * Data source for the StatusTable view. This class should
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
-export class PilotStatusTableDataSource extends DataSource<PilotStatusTableItem> {
-  data: PilotStatusTableItem[] = EXAMPLE_DATA;
+export class PilotStatusTableDataSource extends DataSource<PilotStatusTableItem> {  
+  private configLogService: ConfigLogService;
+
+  data: PilotStatusTableItem[];
 
   constructor(private paginator: MatPaginator, private sort: MatSort) {
     super();
+    this.configLogService.getPilotStatusList()
+    .subscribe(pilot_status_list => this.data = pilot_status_list);
   }
-
+  
   /**
    * Connect this data source to the table. The table will only update when
    * the returned stream emits new items.

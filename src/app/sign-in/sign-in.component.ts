@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfigLogService } from '../config-log.service';
 import { Hero } from '../hero';
+import { PilotStatusTableItem } from '../pilot-status-table/pilot-status-table-datasource';
 
 @Component({
   selector: 'app-sign-in',
@@ -9,19 +10,20 @@ import { Hero } from '../hero';
 })
 export class SignInComponent implements OnInit {
 
-  config: Hero[];
+  config: PilotStatusTableItem[];
 
   constructor(
   	private configLogService: ConfigLogService
   ) { }
 
   ngOnInit() {
-  	this.showConfig();
+    this.show();
   }
 
-  showConfig() {
-  	this.configLogService.getHeroes()
-  	.subscribe(heroes => this.config = heroes);
+  show() {
+    this.configLogService.getPilotStatusList()
+    .subscribe(pilot_status_list => this.config = pilot_status_list);
   }
+
 
 }
