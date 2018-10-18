@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator, MatSort } from '@angular/material';
+import { MatPaginator } from '@angular/material';
 import { PilotStatusTableDataSource } from './pilot-status-table-datasource';
 import { ConfigLogService } from '../config-log.service';
 
@@ -10,7 +10,6 @@ import { ConfigLogService } from '../config-log.service';
 })
 export class PilotStatusTableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
   dataSource: PilotStatusTableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
@@ -18,7 +17,7 @@ export class PilotStatusTableComponent implements OnInit {
   constructor( private configLogService: ConfigLogService ){}
 
   ngOnInit() {
-    this.dataSource = new PilotStatusTableDataSource(this.paginator, this.sort, this.configLogService);
+    this.dataSource = new PilotStatusTableDataSource(this.paginator, this.configLogService);
     this.dataSource.fetchData();
   }
 }

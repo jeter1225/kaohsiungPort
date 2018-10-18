@@ -1,5 +1,5 @@
 import { DataSource } from '@angular/cdk/collections';
-import { MatPaginator, MatSort } from '@angular/material';
+import { MatPaginator } from '@angular/material';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs'
 import { ConfigLogService } from '../config-log.service';
@@ -24,13 +24,13 @@ export class PilotStatusTableDataSource extends DataSource<PilotStatusTableItem>
   
   data: PilotStatusTableItem[];
 
+  constructor(private paginator: MatPaginator, private configLogService: ConfigLogService) {
+    super();
+  }
+
   fetchData() {
     this.configLogService.getPilotStatusList()
     .subscribe(pilot_status_list => this.data = pilot_status_list);
-  }
-
-  constructor(private paginator: MatPaginator, private sort: MatSort,private configLogService: ConfigLogService) {
-    super();
   }
   
   /**
@@ -44,14 +44,13 @@ export class PilotStatusTableDataSource extends DataSource<PilotStatusTableItem>
     const dataMutations = [
       observableOf(this.data),
       this.paginator.page,
-      this.sort.sortChange
     ];
 
     // Set the paginators length
     this.paginator.length = this.data.length;
 
     return merge(...dataMutations).pipe(map(() => {
-      return this.getPagedData(this.getSortedData([...this.data]));
+      return this.getPagedData([...this.data]);
     }));
   }
 
@@ -74,20 +73,6 @@ export class PilotStatusTableDataSource extends DataSource<PilotStatusTableItem>
    * Sort the data (client-side). If you're using server-side sorting,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getSortedData(data: PilotStatusTableItem[]) {
-    if (!this.sort.active || this.sort.direction === '') {
-      return data;
-    }
-
-    return data.sort((a, b) => {
-      const isAsc = this.sort.direction === 'asc';
-      switch (this.sort.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
-        case 'pilot_id': return compare(+a.pilot_id, +b.pilot_id, isAsc);
-        default: return 0;
-      }
-    });
-  }
 }
 
 /** Simple sort comparator for example ID/Name columns (for client-side sorting). */
