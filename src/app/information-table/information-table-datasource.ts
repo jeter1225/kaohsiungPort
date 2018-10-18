@@ -22,8 +22,15 @@ export interface InformationTableItem {
 }
 
 // TODO: replace this with real data from your application
-const EXAMPLE_DATA: InformationTableItem[] = [
-
+export const EXAMPLE_DATA: InformationTableItem[] = [
+  { applyTime_vslSituation_serialNumber: '4', vslName: 'esec', pilot: 'sdc', vslNumber_voyage_mooringInTransferOut: 'sdv', status_pilotNumber_way_nearSpan: 'ad',
+    tugboat_tons: 'wef', agentCodeName_dangerousVsl: 'dsc', departureTime:'sac', frontWaterline_HinderWaterline: 'wfs v', latestModifyDepartureTime_vslAge: 'svdv',
+    anchorTime_anchorPosition_bowThruster:'sca', bringCable_dispatchStation: 'afb', previousPort_nextPort: 'rsav', guideBoatRemark: ' sa'
+  },
+  { applyTime_vslSituation_serialNumber: '5', vslName: 'esec', pilot: 'sdc', vslNumber_voyage_mooringInTransferOut: 'sdv', status_pilotNumber_way_nearSpan: 'ad',
+    tugboat_tons: 'wef', agentCodeName_dangerousVsl: 'dsc', departureTime:'sac', frontWaterline_HinderWaterline: 'wfs v', latestModifyDepartureTime_vslAge: 'svdv',
+    anchorTime_anchorPosition_bowThruster:'sca', bringCable_dispatchStation: 'afb', previousPort_nextPort: 'rsav', guideBoatRemark: ' sa'
+  }
 ];
 
 /**
@@ -34,7 +41,7 @@ const EXAMPLE_DATA: InformationTableItem[] = [
 export class InformationTableDataSource extends DataSource<InformationTableItem> {
   data: InformationTableItem[] = EXAMPLE_DATA;
 
-  constructor(private paginator: MatPaginator, private sort: MatSort) {
+  constructor(private paginator: MatPaginator) {
     super();
   }
 
@@ -49,14 +56,13 @@ export class InformationTableDataSource extends DataSource<InformationTableItem>
     const dataMutations = [
       observableOf(this.data),
       this.paginator.page,
-      this.sort.sortChange
     ];
 
     // Set the paginators length
     this.paginator.length = this.data.length;
 
     return merge(...dataMutations).pipe(map(() => {
-      return this.getPagedData(this.getSortedData([...this.data]));
+      return this.getPagedData([...this.data]);
     }));
   }
 
@@ -79,21 +85,7 @@ export class InformationTableDataSource extends DataSource<InformationTableItem>
    * Sort the data (client-side). If you're using server-side sorting,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getSortedData(data: InformationTableItem[]) {
-    if (!this.sort.active || this.sort.direction === '') {
-      return data;
-    }
-
-    return data.sort((a, b) => {
-      const isAsc = this.sort.direction === 'asc';
-      switch (this.sort.active) {
-        /*case 'name': return compare(a.name, b.name, isAsc);
-        case 'id': return compare(+a.id, +b.id, isAsc);
-        */
-        default: return 0;
-      }
-    });
-  }
+  
 }
 
 /** Simple sort comparator for example ID/Name columns (for client-side sorting). */

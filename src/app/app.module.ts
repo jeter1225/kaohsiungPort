@@ -13,9 +13,11 @@ import { ConfigLogService } from './config-log.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
+import { MatTableModule, MatPaginatorModule, MatSortModule ,MatFormFieldModule, MatInputModule} from '@angular/material';
+import { FormsModule} from '@angular/forms'
 import { PilotStatusTableComponent } from './pilot-status-table/pilot-status-table.component';
-import { InformationTableComponent } from './Information-table/information-table.component';
+import { InformationTableComponent } from './information-table/information-table.component';
+
 
 @NgModule({
   declarations: [
@@ -38,8 +40,11 @@ import { InformationTableComponent } from './Information-table/information-table
     ),
     BrowserAnimationsModule,
     MatTableModule,
+    MatFormFieldModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [ConfigLogService],
   bootstrap: [AppComponent]
