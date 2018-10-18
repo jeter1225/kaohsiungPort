@@ -1,109 +1,120 @@
+<div>
+  <mat-form-field class="search-form-field" floatLabel = "never">
+    <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup) = "applyFilter()">
+    <button mat-button matSuffix aria-label="Clear" *ngIf= "searchKey" (click)="onSearchClear()" >clear</button>
+  </mat-form-field>
+</div>
 <div class="mat-elevation-z8 informationTable">
-  <table mat-table #table [dataSource]="dataSource" matSort aria-label="Elements">
+  <table mat-table #table [dataSource]="dataSource"  aria-label="Elements">
 
     <!-- applyTime_vslSituation_serialNumber -->
 
     <ng-container matColumnDef="applyTime_vslSituation_serialNumber">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>申請時間<br>航況/序號</th>
+      <th mat-header-cell *matHeaderCellDef >申請時間<br>航況/序號</th>
       <td mat-cell *matCellDef="let row">{{row.applyTime_vslSituation_serialNumber}}</td>
     </ng-container>
 
     <!-- vslName Column -->
 
     <ng-container matColumnDef="vslName">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>中英船名</th>
+      <th mat-header-cell *matHeaderCellDef >中英船名</th>
       <td mat-cell *matCellDef="let row">{{row.vslName}}</td>
     </ng-container>
 
     <!-- pilot Column -->
 
     <ng-container matColumnDef="pilot">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>引水人</th>
+      <th mat-header-cell *matHeaderCellDef >引水人</th>
       <td mat-cell *matCellDef="let row">{{row.pilot}}</td>
     </ng-container>
 
     <!-- vslNumber_voyage_mooringInTransferOut Column -->
 
     <ng-container matColumnDef="vslNumber_voyage_mooringInTransferOut">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>船編/航次<br>靠地(頭尾纜)</th>
+      <th mat-header-cell *matHeaderCellDef >船編/航次<br>靠地(頭尾纜)</th>
       <td mat-cell *matCellDef="let row">{{row.vslNumber_voyage_mooringInTransferOut}}</td>
     </ng-container>
 
     <!-- status_pilotNumber_way_nearSpan Column -->
 
     <ng-container matColumnDef="status_pilotNumber_way_nearSpan">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>狀況/人數<br>方式/近跨</th>
+      <th mat-header-cell *matHeaderCellDef >狀況/人數<br>方式/近跨</th>
       <td mat-cell *matCellDef="let row">{{row.status_pilotNumber_way_nearSpan}}</td>
     </ng-container>
 
     <!-- tugboat_tons Column -->
 
     <ng-container matColumnDef="tugboat_tons">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>拖船數<br>總噸位</th>
+      <th mat-header-cell *matHeaderCellDef >拖船數<br>總噸位</th>
       <td mat-cell *matCellDef="let row">{{row.tugboat_tons}}</td>
     </ng-container>
 
     <!-- agentCodeName_dangerousVsl Column -->
 
     <ng-container matColumnDef="agentCodeName_dangerousVsl">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>港代理代號<br>危險品船</th>
+      <th mat-header-cell *matHeaderCellDef >港代理代號<br>危險品船</th>
       <td mat-cell *matCellDef="let row">{{row.agentCodeName_dangerousVsl}}</td>
     </ng-container>
 
     <!-- departureTime Column -->
 
     <ng-container matColumnDef="departureTime">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>出發時間</th>
+      <th mat-header-cell *matHeaderCellDef >出發時間</th>
       <td mat-cell *matCellDef="let row">{{row.departureTime}}</td>
     </ng-container>
 
     <!-- frontWaterline_HinderWaterline Column -->
 
     <ng-container matColumnDef="frontWaterline_HinderWaterline">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>前吃水<br>後吃水</th>
+      <th mat-header-cell *matHeaderCellDef >前吃水<br>後吃水</th>
       <td mat-cell *matCellDef="let row">{{row.frontWaterline_HinderWaterline}}</td>
     </ng-container>
 
     <!-- latestModifyDepartureTime_vslAge Column -->
 
     <ng-container matColumnDef="latestModifyDepartureTime_vslAge">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>引水時間最後修改時間<br>船齡</th>
+      <th mat-header-cell *matHeaderCellDef >引水時間最後修改時間<br>船齡</th>
       <td mat-cell *matCellDef="let row">{{row.latestModifyDepartureTime_vslAge}}</td>
     </ng-container>
 
     <!-- anchorTime_anchorPosition_bowThruster Column -->
 
     <ng-container matColumnDef="anchorTime_anchorPosition_bowThruster">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>港外下錨時間<br>港外錨位/艏推</th>
+      <th mat-header-cell *matHeaderCellDef >港外下錨時間<br>港外錨位/艏推</th>
       <td mat-cell *matCellDef="let row">{{row.anchorTime_anchorPosition_bowThruster}}</td>
     </ng-container>
 
     <!-- bringCable_dispatchStation Column -->
 
     <ng-container matColumnDef="bringCable_dispatchStation">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>帶解纜<br>調度站</th>
+      <th mat-header-cell *matHeaderCellDef >帶解纜<br>調度站</th>
       <td mat-cell *matCellDef="let row">{{row.bringCable_dispatchStation}}</td>
     </ng-container>
 
     <!-- previousPort_nextPort Column -->
 
     <ng-container matColumnDef="previousPort_nextPort">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>前一港<br>次一港</th>
+      <th mat-header-cell *matHeaderCellDef >前一港<br>次一港</th>
       <td mat-cell *matCellDef="let row">{{row.previousPort_nextPort}}</td>
     </ng-container>
 
        <!-- guideBoatRemark Column -->
 
     <ng-container matColumnDef="guideBoatRemark">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>開導艇備註</th>
+      <th mat-header-cell *matHeaderCellDef >開導艇備註</th>
       <td mat-cell *matCellDef="let row">{{row.guideBoatRemark}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="loading">
+      <td mat-footer-cell *matFooterCellDef>Loading Data...</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':dataSource!=null}"></tr>
   </table>
 
-  <mat-paginator #paginator [length]="dataSource.data.length" [pageIndex]="0" [pageSize]="50" [pageSizeOptions]="[25, 50, 100, 250]" class="mat-paginator-sticky">
+  <mat-paginator #paginator [length]="dataSource.data.length" [pageIndex]="0" [pageSize]="50" class="mat-paginator-sticky" showFirstLastButtons>
   </mat-paginator>
 
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator, MatSort } from '@angular/material';
-import { InformationTableDataSource } from './information-table-datasource';
+import { MatPaginator, MatTableDataSource} from '@angular/material';
+import { InformationTableDataSource, EXAMPLE_DATA} from './information-table-datasource';
+
 
 @Component({
   selector: 'app-information-table',
@@ -9,8 +10,8 @@ import { InformationTableDataSource } from './information-table-datasource';
 })
 export class InformationTableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
-  dataSource: InformationTableDataSource;
+  searchKey: string;
+  dataSource = new MatTableDataSource(EXAMPLE_DATA) ;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['applyTime_vslSituation_serialNumber', 'vslName', 'pilot', 'vslNumber_voyage_mooringInTransferOut',
@@ -19,6 +20,13 @@ export class InformationTableComponent implements OnInit {
   'bringCable_dispatchStation', 'previousPort_nextPort', 'guideBoatRemark'];
 
   ngOnInit() {
-    this.dataSource = new InformationTableDataSource(this.paginator, this.sort);
-  }
+    this.dataSource.paginator = this.paginator;
+  };
+  onSearchClear(){
+    this.searchKey= "";
+    this.applyFilter();
+  };
+  applyFilter(){
+    this.dataSource.filter =this.searchKey.trim().toLowerCase();
+  };
 }
