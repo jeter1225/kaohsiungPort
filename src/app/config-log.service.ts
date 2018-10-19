@@ -4,6 +4,8 @@ import { Observable, of } from 'rxjs';
 import { Hero } from './hero';
 import { catchError, map, tap } from 'rxjs/operators';
 import { PilotStatusTableItem } from './pilot-status-table/pilot-status-table-datasource';
+import { InformationTableItem } from './information-table/information-table-datasource';
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +13,7 @@ import { PilotStatusTableItem } from './pilot-status-table/pilot-status-table-da
 export class ConfigLogService {
 
 	private pilotStatusListUrl = 'api/pilot_status_list';
+	private informationTableUrl = 'api/information_table_list';
 
   constructor(
   	private http: HttpClient,
@@ -21,6 +24,14 @@ export class ConfigLogService {
   	.pipe(
   		tap(pilot_status_list => this.log('fetched status list')),
   		catchError(this.handleError('getPilotStatusList', []))
+  	);
+	}
+
+  getInformation(): Observable<InformationTableItem[]> {
+  	return this.http.get<InformationTableItem[]>(this.informationTableUrl)
+  	.pipe(
+  		tap(information_table_list => this.log('fetched info list')),
+  		catchError(this.handleError('getInformationTable', []))
   	);
 	}
 

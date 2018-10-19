@@ -12,11 +12,13 @@ import { PilotStatusComponent } from './pilot-status/pilot-status.component';
 import { ConfigLogService } from './config-log.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
+import { InformationDataService } from './information-data.service'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule, MatPaginatorModule, MatSortModule ,MatFormFieldModule, MatInputModule} from '@angular/material';
 import { FormsModule} from '@angular/forms';
 import { PilotStatusTableComponent } from './pilot-status-table/pilot-status-table.component';
 import { InformationTableComponent } from './information-table/information-table.component';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,9 @@ import { InformationTableComponent } from './information-table/information-table
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
+    ),
+    HttpClientInMemoryWebApiModule.forRoot(
+      InformationDataService, { dataEncapsulation: false }
     ),
     BrowserAnimationsModule,
     MatTableModule,
