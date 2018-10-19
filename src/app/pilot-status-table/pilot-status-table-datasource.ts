@@ -27,11 +27,6 @@ export class PilotStatusTableDataSource extends DataSource<PilotStatusTableItem>
   constructor(private paginator: MatPaginator, private configLogService: ConfigLogService) {
     super();
   }
-
-  fetchData() {
-    this.configLogService.getPilotStatusList()
-    .subscribe(pilot_status_list => this.data = pilot_status_list);
-  }
   
   /**
    * Connect this data source to the table. The table will only update when

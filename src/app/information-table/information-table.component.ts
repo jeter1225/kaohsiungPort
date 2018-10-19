@@ -11,7 +11,7 @@ import { ConfigLogService } from '../config-log.service';
 export class InformationTableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   searchKey: string;
-  dataInit: InformationTableItem[];
+  private dataInit: InformationTableItem[];
   dataSource: MatTableDataSource<any>;
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['applyTime_vslSituation_serialNumber', 'vslName', 'pilot', 'vslNumber_voyage_mooringInTransferOut',
@@ -26,7 +26,6 @@ export class InformationTableComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.dataSource.paginator = this.paginator;
   };
   onSearchClear(){
