@@ -45,8 +45,8 @@
     <tr mat-footer-row *matFooterRowDef = "['loading']" [ngClass] = "{'hide':dataSource!=null}"></tr>
   </table>
 
-  <mat-paginator #paginator
-  [length] = "dataSource.data.length"
+  <mat-paginator  #paginator
+  
   [pageIndex] = "0"
   [pageSize] = "20"
   class = "mat-paginator-sticky"

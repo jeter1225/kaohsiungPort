@@ -23,7 +23,7 @@ export class ConfigLogService {
   	return this.http.get<PilotStatusTableItem[]>(this.pilotStatusListUrl)
   	.pipe(
   		tap(pilot_status_list => this.log('fetched status list')),
-  		catchError(this.handleError('getPilotStatusList', []))
+  		catchError(this.handleError('getPilotStatusList--Error', []))
   	);
 	}
 
@@ -31,7 +31,7 @@ export class ConfigLogService {
   	return this.http.get<InformationTableItem[]>(this.informationTableUrl)
   	.pipe(
   		tap(information_table_list => this.log('fetched info list')),
-  		catchError(this.handleError('getInformationTable', []))
+  		catchError(this.handleError('getInformationTable--Error', []))
   	);
 	}
 
