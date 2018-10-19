@@ -14,7 +14,7 @@ export class PilotStatusTableComponent implements OnInit {
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['pilot_id', 'name', 'ship_id', 'status', 'night_shift', 'break', 'leave'];
-  constructor( private configLogService: ConfigLogService ){}
+  constructor( private configLogService: ConfigLogService ) {}
 
   ngOnInit() {
     this.dataSource = new PilotStatusTableDataSource(this.paginator, this.configLogService);
