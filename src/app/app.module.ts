@@ -16,6 +16,7 @@ import { InformationDataService } from './information-data.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule, MatPaginatorModule, MatSortModule ,MatFormFieldModule, MatInputModule, MatIconModule} from '@angular/material';
 import { FormsModule} from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
 import { PilotStatusTableComponent } from './pilot-status-table/pilot-status-table.component';
 import { InformationTableComponent } from './information-table/information-table.component';
 import { from } from 'rxjs';
@@ -37,6 +38,7 @@ import { from } from 'rxjs';
     AppRoutingModule,
     MatIconModule,
     HttpClientModule,
+    MatButtonModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
