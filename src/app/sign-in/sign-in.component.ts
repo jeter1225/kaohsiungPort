@@ -17,13 +17,6 @@ export class SignInComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.show();
   }
-
-  show() {
-    this.configLogService.getPilotStatusList()
-    .subscribe(pilot_status_list => this.config = pilot_status_list);
-  }
-
 
 }
