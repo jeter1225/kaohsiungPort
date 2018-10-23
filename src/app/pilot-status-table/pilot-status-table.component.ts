@@ -20,10 +20,9 @@ export class PilotStatusTableComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.dataSource = new MatTableDataSource(this.dataInit);
+    this.dataSource.paginator = this.paginator;
     this.configLogService.getPilotStatusList()
     .subscribe(pilot_status_list => this.dataSource.data = pilot_status_list);
-    this.dataSource = new MatTableDataSource(this.dataInit);
-    
-    this.dataSource.paginator = this.paginator;
   }
 }

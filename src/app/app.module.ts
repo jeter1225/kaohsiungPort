@@ -12,14 +12,15 @@ import { PilotStatusComponent } from './pilot-status/pilot-status.component';
 import { ConfigLogService } from './config-log.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
-import { InformationDataService } from './information-data.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule, MatPaginatorModule, MatSortModule ,MatFormFieldModule, MatInputModule, MatIconModule} from '@angular/material';
 import { FormsModule} from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 import { PilotStatusTableComponent } from './pilot-status-table/pilot-status-table.component';
 import { InformationTableComponent } from './information-table/information-table.component';
 import { from } from 'rxjs';
+import { SendPasswordDialogComponent } from './dialog-summary/send-password-dialog/send-password-dialog.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { from } from 'rxjs';
     PilotOrderComponent,
     PilotStatusComponent,
     PilotStatusTableComponent,
-    InformationTableComponent
+    InformationTableComponent,
+    SendPasswordDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,11 @@ import { from } from 'rxjs';
     MatPaginatorModule,
     MatSortModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
+  ],
+  entryComponents: [
+    SendPasswordDialogComponent
   ],
   providers: [ConfigLogService],
   bootstrap: [AppComponent]
