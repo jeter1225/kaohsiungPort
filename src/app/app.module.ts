@@ -56,6 +56,9 @@ import { SendPasswordDialogComponent } from './dialog-summary/send-password-dial
     FormsModule,
     MatDialogModule
   ],
+  entryComponents: [
+    SendPasswordDialogComponent
+  ],
   providers: [ConfigLogService],
   bootstrap: [AppComponent]
 })

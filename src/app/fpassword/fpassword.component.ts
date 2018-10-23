@@ -7,7 +7,7 @@ import { SendPasswordDialogComponent } from '../dialog-summary/send-password-dia
 @Component({
   selector: 'app-fpassword',
   templateUrl: './fpassword.component.html',
-  styleUrls: ['./fpassword.component.css']
+  styleUrls: ['./fpassword.component.css'],
 })
 export class FpasswordComponent implements OnInit {
 
@@ -19,7 +19,7 @@ export class FpasswordComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(SendPasswordDialogComponent, {
-      width: '250px',
+      width: '650px',
       height: '300px'
     })
 
