@@ -13,7 +13,7 @@ export class InMemoryDataService implements InMemoryDbService {
 			{ pilot_id: 1, name: 'Hydrogen', ship_id: '061646', status: '待命中', night_shift: '1', break: '掛牌', leave: '請假'},
 			{ pilot_id: 2, name: 'Helium', ship_id: '257385', status: '工作中', night_shift: '2', break: '掛牌', leave: '請假'},
 			{ pilot_id: 3, name: 'Lithium', ship_id: '285953', status: '工作中', night_shift: '1', break: '掛牌', leave: '請假'},
-			{ pilot_id: 4, name: 'Beryllium', ship_id: '893635', status: '請假中', night_shift: '1', break: '掛牌', leave: '請假'},
+			{ pilot_id: 4, name: 'Beryllium', ship_id: '893635', status: '請假有代班', night_shift: '1', break: '掛牌', leave: '請假'},
 			{ pilot_id: 5, name: 'Boron', ship_id: '104853', status: '掛牌', night_shift: '1', break: '掛牌', leave: '請假'},
 			{ pilot_id: 6, name: 'Carbon', ship_id: '594732', status: '已簽船', night_shift: '0', break: '掛牌', leave: '請假'},
 			{ pilot_id: 7, name: 'Nitrogen', ship_id: '503827', status: '休假', night_shift: '1', break: '掛牌', leave: '請假'},

@@ -37,12 +37,14 @@
     </ng-container>
 
     <ng-container matColumnDef="loading">
-      <td mat-footer-cell *matFooterCellDef>Loading Data...</td>
+      <td mat-footer-cell *matFooterCellDef colspan="14" class="load">
+        Loading Data...
+      </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
     <tr mat-row *matRowDef = "let row; columns: displayedColumns;"></tr>
-    <tr mat-footer-row *matFooterRowDef = "['loading']" [ngClass] = "{'hide':dataSource!=null}"></tr>
+    <tr mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':  dataSource.data.length!=0}"></tr>
   </table>
 
   <mat-paginator  #paginator

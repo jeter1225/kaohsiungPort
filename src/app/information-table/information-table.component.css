@@ -23,11 +23,14 @@ table{
 .hide{
     display: none;
 }
-mat-footer-row mat-footer-cell{
+td.load{
     justify-content: center;
+    text-align: center;
     font-style: italic;
 }
-
+.search-div{
+    margin: 10px;
+}
 .search-form-field{
     width: 60%;
     margin-left: 5px;
@@ -44,4 +47,7 @@ mat-footer-row mat-footer-cell{
 .search-form-field div.mat-form-field-wrapper {
     padding-bottom: 0px;
 }
-
+.search-form-field div.mat-form-field-suffix button{
+    height: 32px;
+    width: 32px;
+}
