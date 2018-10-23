@@ -22,8 +22,8 @@ a {
 .hide{
     display: none;
 }
-
-mat-footer-row mat-footer-cell{
+td.load{
     justify-content: center;
+    text-align: center;
     font-style: italic;
 }

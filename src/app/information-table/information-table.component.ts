@@ -20,13 +20,17 @@ export class InformationTableComponent implements OnInit {
   'bringCable_dispatchStation', 'previousPort_nextPort', 'guideBoatRemark'];
 
   constructor( private configLogService: ConfigLogService) {
-    this.dataSource = new MatTableDataSource(this.dataInit);
-    this.configLogService.getInformation()
-    .subscribe(information_table_list => this.dataSource.data = information_table_list);
+    
   }
 
   ngOnInit() {
-    this.dataSource.paginator = this.paginator;
+    
+      this.configLogService.getInformation()
+      .subscribe(information_table_list => this.dataSource.data = information_table_list);
+      this.dataSource = new MatTableDataSource(this.dataInit);
+      this.dataSource.paginator = this.paginator;
+      
+    
   };
   onSearchClear(){
     this.searchKey= "";
