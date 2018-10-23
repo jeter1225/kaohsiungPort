@@ -3,4 +3,6 @@ p{
 }
 .tabButton{
     width: 33%;
+    border-style:solid;
+    border-width:0.5px;
 }
