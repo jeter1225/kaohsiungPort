@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule, MatPaginatorModule, MatSortModule ,MatFormFieldModule, MatInputModule, MatIconModule} from '@angular/material';
 import { FormsModule} from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 import { PilotStatusTableComponent } from './pilot-status-table/pilot-status-table.component';
 import { InformationTableComponent } from './information-table/information-table.component';
 import { from } from 'rxjs';
@@ -39,6 +40,7 @@ import { SendPasswordDialogComponent } from './dialog-summary/send-password-dial
     AppRoutingModule,
     MatIconModule,
     HttpClientModule,
+    MatButtonModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
