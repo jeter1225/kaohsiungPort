@@ -24,13 +24,10 @@ export class InformationTableComponent implements OnInit {
   }
 
   ngOnInit() {
-    
-      this.configLogService.getInformation()
-      .subscribe(information_table_list => this.dataSource.data = information_table_list);
       this.dataSource = new MatTableDataSource(this.dataInit);
       this.dataSource.paginator = this.paginator;
-      
-    
+      this.configLogService.getInformation()
+      .subscribe(information_table_list => this.dataSource.data = information_table_list);
   };
   onSearchClear(){
     this.searchKey= "";
