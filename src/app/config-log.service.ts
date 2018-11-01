@@ -12,7 +12,7 @@ import { InformationTableItem } from './information-table/information-table-data
 })
 export class ConfigLogService {
 
-	private pilotStatusListUrl = 'api/pilot_status_list';
+	private pilotStatusListUrl = 'http://fleet-geode-218517.appspot.com/api/pilot/';
 	private informationTableUrl = 'api/information_table_list';
 
   constructor(
