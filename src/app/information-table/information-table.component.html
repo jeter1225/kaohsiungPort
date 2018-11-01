@@ -11,14 +11,14 @@
 
     <!-- applyTime_vslSituation_serialNumber -->
 
-    <ng-container matColumnDef="applyTime_vslSituation_serialNumber">
+    <ng-container matColumnDef="applyTime_vslSituation_serialNumber" sticky>
       <th mat-header-cell *matHeaderCellDef style="text-align:center">申請時間<br style="text-align:center">航況/序號</th>
       <td mat-cell *matCellDef="let row" style="text-align:center">{{row.applyTime_vslSituation_serialNumber}}</td>
     </ng-container>
 
     <!-- vslName Column -->
 
-    <ng-container matColumnDef="vslName">
+    <ng-container matColumnDef="vslName" >
       <th mat-header-cell *matHeaderCellDef style="text-align:center">中英船名</th>
       <td mat-cell *matCellDef="let row" style="text-align:center">{{row.vslName}}</td>
     </ng-container>
@@ -102,8 +102,8 @@
 
        <!-- guideBoatRemark Column -->
 
-    <ng-container matColumnDef="guideBoatRemark">
-      <th mat-header-cell *matHeaderCellDef style="text-align:center">開導艇備註</th>
+    <ng-container matColumnDef="guideBoatRemark" stickyEnd>
+      <th mat-header-cell *matHeaderCellDef style="text-align:center" >開導艇備註</th>
       <td mat-cell *matCellDef="let row" style="text-align:center">{{row.guideBoatRemark}}</td>
     </ng-container>
 
