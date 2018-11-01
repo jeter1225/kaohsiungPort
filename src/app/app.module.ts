@@ -19,6 +19,7 @@ import { PilotStatusTableComponent } from './pilot-status-table/pilot-status-tab
 import { InformationTableComponent } from './information-table/information-table.component';
 import { from } from 'rxjs';
 import { SendPasswordDialogComponent } from './dialog-summary/send-password-dialog/send-password-dialog.component';
+import { PilotOrderTableComponent } from './pilot-order-table/pilot-order-table.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SendPasswordDialogComponent } from './dialog-summary/send-password-dial
     PilotStatusComponent,
     PilotStatusTableComponent,
     InformationTableComponent,
-    SendPasswordDialogComponent
+    SendPasswordDialogComponent,
+    PilotOrderTableComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { Hero } from './hero';
 import { catchError, map, tap } from 'rxjs/operators';
 import { PilotStatusTableItem } from './pilot-status-table/pilot-status-table-datasource';
 import { InformationTableItem } from './information-table/information-table-datasource';
+import { PilotOrderTableItem } from './pilot-order-table/pilot-order-table-datasource';
 
 
 @Injectable({
@@ -14,10 +15,19 @@ export class ConfigLogService {
 
 	private pilotStatusListUrl = 'http://fleet-geode-218517.appspot.com/api/pilot/';
 	private informationTableUrl = 'http://fleet-geode-218517.appspot.com/api/event/';
+	private pilotOrderListUrl = 'http://fleet-geode-218517.appspot.com/api/order/';
 
   constructor(
   	private http: HttpClient,
-  ) { }
+	) { }
+	
+	getInformation(): Observable<InformationTableItem[]> {
+  	return this.http.get<InformationTableItem[]>(this.informationTableUrl)
+  	.pipe(
+  		tap(information_table_list => this.log('fetched info list')),
+  		catchError(this.handleError('getInformationTable--Error', []))
+  	);
+	}
 
   getPilotStatusList(): Observable<PilotStatusTableItem[]> {
   	return this.http.get<PilotStatusTableItem[]>(this.pilotStatusListUrl)
@@ -27,11 +37,11 @@ export class ConfigLogService {
   	);
 	}
 
-  getInformation(): Observable<InformationTableItem[]> {
-  	return this.http.get<InformationTableItem[]>(this.informationTableUrl)
+  getPilotOrderList(): Observable<PilotOrderTableItem[]> {
+		return this.http.get<PilotOrderTableItem[]>(this.pilotOrderListUrl)
   	.pipe(
-  		tap(information_table_list => this.log('fetched info list')),
-  		catchError(this.handleError('getInformationTable--Error', []))
+  		tap(pilot_order_list => this.log('fetched order list')),
+  		catchError(this.handleError('getPilotOrderList--Error', []))
   	);
 	}
 
