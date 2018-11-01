@@ -13,7 +13,7 @@ export interface InformationTableItem {
   status_pilotNumber_way_nearSpan: string;
   tugboat_tons: string;
   agentCodeName_dangerousVsl: string;
-  departureTime: string;
+  departureTime_ETA: string;
   frontWaterline_HinderWaterline: string;
   latestModifyDepartureTime_vslAge: string;
   anchorTime_anchorPosition_bowThruster: string;

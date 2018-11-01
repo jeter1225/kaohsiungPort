@@ -6,11 +6,67 @@
 }
 
 table{
-    width:100%;
+    width: 100%;
+}
+.mat-column-applyTime_vslSituation_serialNumber{
+    width: 10%;
+    min-width: 150px;
+}
+.mat-column-vslName{
+    width: 12%;
+    min-width: 150px;
+}
+.mat-column-pilot{
+    width: 5%;
+    min-width: 100px;
+}
+.mat-column-vslNumber_voyage_mooringInTransferOut{
+    width: 9%;
+    min-width: 100px;
+}
+.mat-column-status_pilotNumber_way_nearSpan{
+    width: 9%;
+    min-width: 100px;
+}
+.mat-column-tugboat_tons{
+    width: 5%;
+    min-width: 100px;
+}
+.mat-column-agentCodeName_dangerousVsl{
+    width: 15%;
+    min-width: 180px;
+}
+.mat-column-departureTime_ETA{
+    width: 15%;
+    min-width: 180px;
+}
+.mat-column-frontWaterline_HinderWaterline{
+    width: 5%;
+    min-width: 100px;
+}
+.mat-column-latestModifyDepartureTime_vslAge{
+    width: 18%;
+    min-width: 180px;
+}
+.mat-column-anchorTime_anchorPosition_bowThruster{
+    width: 15%;
+    min-width: 150px;
+}
+.mat-column-bringCable_dispatchStation{
+    width: 5%;
+    min-width: 100px;
+}
+.mat-column-previousPort_nextPort{
+    width: 15%;
+    min-width: 120px;
+}
+.mat-column-guideBoatRemark{
+    width: 10%;
+    min-width: 100px;
 }
 
 td.mat-column-star {
-    width: 20px;
+    width: 200px;
     padding-right: 8px;
 }
 
@@ -18,16 +74,13 @@ th.mat-column-position, td.mat-column-position {
     padding-left: 8px;
 }
 
-.mat-table-sticky:first-child {
+.mat-table-sticky:nth-child(2), .mat-table-sticky:first-child{
     border-right: 1px solid #e0e0e0;
 }
 
-.mat-table-sticky:last-child {
-    border-left: 1px solid #e0e0e0;
-}
 
 .mat-paginator-sticky {
-    bottom: 0px;
+    bottom: 0;
     position: sticky;
     z-index: 10;
   }

@@ -18,7 +18,7 @@
 
     <!-- vslName Column -->
 
-    <ng-container matColumnDef="vslName" >
+    <ng-container matColumnDef="vslName" sticky>
       <th mat-header-cell *matHeaderCellDef style="text-align:center">中英船名</th>
       <td mat-cell *matCellDef="let row" style="text-align:center">{{row.vslName}}</td>
     </ng-container>
@@ -54,15 +54,15 @@
     <!-- agentCodeName_dangerousVsl Column -->
 
     <ng-container matColumnDef="agentCodeName_dangerousVsl">
-      <th mat-header-cell *matHeaderCellDef style="text-align:center">港代理代號<br style="text-align:center">危險品船</th>
+      <th mat-header-cell *matHeaderCellDef style="text-align:center">港代理/代號<br style="text-align:center">危險品船</th>
       <td mat-cell *matCellDef="let row" style="text-align:center">{{row.agentCodeName_dangerousVsl}}</td>
     </ng-container>
 
-    <!-- departureTime Column -->
+    <!-- departureTime_ETA Column -->
 
-    <ng-container matColumnDef="departureTime">
-      <th mat-header-cell *matHeaderCellDef style="text-align:center">出發時間</th>
-      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.departureTime}}</td>
+    <ng-container matColumnDef="departureTime_ETA">
+      <th mat-header-cell *matHeaderCellDef style="text-align:center">出發時間<br style="text-align:center">船長報告ETA</th>
+      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.departureTime_ETA}}</td>
     </ng-container>
 
     <!-- frontWaterline_HinderWaterline Column -->
@@ -102,7 +102,7 @@
 
        <!-- guideBoatRemark Column -->
 
-    <ng-container matColumnDef="guideBoatRemark" stickyEnd>
+    <ng-container matColumnDef="guideBoatRemark" >
       <th mat-header-cell *matHeaderCellDef style="text-align:center" >開導艇備註</th>
       <td mat-cell *matCellDef="let row" style="text-align:center">{{row.guideBoatRemark}}</td>
     </ng-container>

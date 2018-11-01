@@ -15,7 +15,7 @@ export class InformationTableComponent implements OnInit {
   dataSource: MatTableDataSource<any>;
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['applyTime_vslSituation_serialNumber', 'vslName', 'pilot', 'vslNumber_voyage_mooringInTransferOut',
-  'status_pilotNumber_way_nearSpan', 'tugboat_tons', 'agentCodeName_dangerousVsl', 'departureTime',
+  'status_pilotNumber_way_nearSpan', 'tugboat_tons', 'agentCodeName_dangerousVsl', 'departureTime_ETA',
   'frontWaterline_HinderWaterline', 'latestModifyDepartureTime_vslAge', 'anchorTime_anchorPosition_bowThruster',
   'bringCable_dispatchStation', 'previousPort_nextPort', 'guideBoatRemark'];
 
