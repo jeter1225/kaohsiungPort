@@ -11,7 +11,6 @@ import { PilotOrderComponent } from './pilot-order/pilot-order.component';
 import { PilotStatusComponent } from './pilot-status/pilot-status.component';
 import { ConfigLogService } from './config-log.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule, MatPaginatorModule, MatSortModule ,MatFormFieldModule, MatInputModule, MatIconModule} from '@angular/material';
 import { FormsModule} from '@angular/forms';
@@ -41,9 +40,6 @@ import { SendPasswordDialogComponent } from './dialog-summary/send-password-dial
     MatIconModule,
     HttpClientModule,
     MatButtonModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    ),
     /*HttpClientInMemoryWebApiModule.forRoot(
       InformationDataService, { dataEncapsulation: false }
     ),*/
