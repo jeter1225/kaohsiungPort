@@ -8,7 +8,7 @@ import { ConfigLogService } from '../config-log.service';
 export interface PilotStatusTableItem {
   pilot_id: string;
   name: string;
-  ship_id: string;
+  ship: string;
   status: string;
   night_shift: string;
   break: string;

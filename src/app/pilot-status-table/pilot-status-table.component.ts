@@ -14,7 +14,7 @@ export class PilotStatusTableComponent implements OnInit {
   dataSource: MatTableDataSource<any>;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['pilot_id', 'name', 'ship_id', 'status', 'night_shift', 'break', 'leave'];
+  displayedColumns = ['pilot_id', 'name', 'ship', 'status', 'night_shift', 'break', 'leave'];
   constructor( private configLogService: ConfigLogService ) {
     
   }
