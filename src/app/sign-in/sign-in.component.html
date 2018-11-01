@@ -4,11 +4,14 @@
 <div class = "input">密碼
 <input #inputPassword type = "text">
 </div>
-
-<button mat-stroked-button class = signin-homepage>
-  <a routerLink = "/homepage/information" >登入</a>
-</button>
-<button mat-stroked-button class = "signin-fpassword">
-  <a routerLink = "/fpassword" >忘記密碼</a>
-</button>
+<a routerLink = "/homepage/information" >
+  <button mat-stroked-button class = signin-homepage>
+    登入
+  </button>
+</a>
+<a routerLink = "/fpassword" >
+  <button mat-stroked-button class = "signin-fpassword">
+    忘記密碼
+  </button>
+</a>
 
