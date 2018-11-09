@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
-import { PilotOrderTableDataSource, PilotOrderTableItem } from './pilot-order-table-datasource';
 import { ConfigLogService } from '../config-log.service';
 
 @Component({
@@ -10,7 +9,6 @@ import { ConfigLogService } from '../config-log.service';
 })
 export class PilotOrderTableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  private dataInit: PilotOrderTableItem[];
   dataSource: MatTableDataSource<any>;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
@@ -20,7 +18,7 @@ export class PilotOrderTableComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource(this.dataInit);
+    this.dataSource = new MatTableDataSource();
     this.dataSource.paginator = this.paginator;
     this.configLogService.getPilotOrderList()
     .subscribe(pilot_order_list => this.dataSource.data = pilot_order_list);
