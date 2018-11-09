@@ -10,6 +10,7 @@ import { ConfigLogService } from '../config-log.service';
 export class PilotStatusTableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   dataSource: MatTableDataSource<any>;
+  totalCount: number;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['pilot_id', 'name', 'ship', 'status', 'night_shift', 'break', 'leave'];
@@ -19,8 +20,12 @@ export class PilotStatusTableComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource();
-    this.dataSource.paginator = this.paginator;
     this.configLogService.getPilotStatusList()
-    .subscribe(pilot_status_list => this.dataSource.data = pilot_status_list);
+    .subscribe(pilot_status_list => {
+      this.dataSource.data = pilot_status_list;
+      this.totalCount = pilot_status_list.items.length;
+      this.dataSource.paginator = this.paginator;
+    }
+    );
   }
 }

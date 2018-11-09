@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource} from '@angular/material';
-
 import { ConfigLogService } from '../config-log.service';
 
 @Component({

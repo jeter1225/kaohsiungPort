@@ -3,6 +3,8 @@
     margin: 20px auto;
     height: 50%;
     overflow: auto;
+    padding: 1em;
+    border: 0.5em;
 }
 
 table {
