@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
-import { ConfigLogService } from '../config-log.service';
+import { PilotStatusService } from '../service-summary/pilot-status-service.service';
 
 @Component({
   selector: 'app-pilot-status-table',
@@ -10,17 +10,22 @@ import { ConfigLogService } from '../config-log.service';
 export class PilotStatusTableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   dataSource: MatTableDataSource<any>;
+  totalCount: number;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['pilot_id', 'name', 'ship', 'status', 'night_shift', 'break', 'leave'];
-  constructor( private configLogService: ConfigLogService ) {
+  constructor( private pilotStatusService: PilotStatusService ) {
     
   }
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource();
-    this.dataSource.paginator = this.paginator;
-    this.configLogService.getPilotStatusList()
-    .subscribe(pilot_status_list => this.dataSource.data = pilot_status_list);
+    this.pilotStatusService.getPilotStatusList()
+    .subscribe(pilot_status_list => {
+      this.dataSource.data = pilot_status_list;
+      this.totalCount = pilot_status_list.items.length;
+      this.dataSource.paginator = this.paginator;
+    }
+    );
   }
 }

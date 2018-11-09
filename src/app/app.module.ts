@@ -9,7 +9,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { InformationComponent } from './information/information.component';
 import { PilotOrderComponent } from './pilot-order/pilot-order.component';
 import { PilotStatusComponent } from './pilot-status/pilot-status.component';
-import { ConfigLogService } from './config-log.service';
+import { ConfigLogService } from './service-summary/config-log.service';
+import { InformationService } from './service-summary/information-service.service';
+import { PilotStatusService } from './service-summary/pilot-status-service.service';
+import { PilotOrderService } from './service-summary/pilot-order-service.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule, MatPaginatorModule, MatSortModule ,MatFormFieldModule, MatInputModule, MatIconModule} from '@angular/material';
 import { FormsModule} from '@angular/forms';
@@ -42,9 +45,6 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatIconModule,
     HttpClientModule,
     MatButtonModule,
-    /*HttpClientInMemoryWebApiModule.forRoot(
-      InformationDataService, { dataEncapsulation: false }
-    ),*/
     BrowserAnimationsModule,
     MatTableModule,
     MatFormFieldModule,
@@ -58,7 +58,7 @@ import { MatTabsModule } from '@angular/material/tabs';
   entryComponents: [
     SendPasswordDialogComponent
   ],
-  providers: [ConfigLogService],
+  providers: [ConfigLogService, InformationService, PilotOrderService, PilotStatusService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
