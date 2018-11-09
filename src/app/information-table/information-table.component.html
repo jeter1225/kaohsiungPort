@@ -34,42 +34,42 @@
 
     <ng-container matColumnDef="vslNumber_voyage_mooringInTransferOut">
       <th mat-header-cell *matHeaderCellDef style="text-align:center">船編/航次<br style="text-align:center">靠地(頭尾纜)</th>
-      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.vslNumber}}{{row.voyage}}{{row.vsl_from_to}}</td>
+      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.vslNumber}}/{{row.voyage}}/{{row.vsl_from_to}}</td>
     </ng-container>
 
     <!-- status_pilotNumber_way_nearSpan Column -->
 
     <ng-container matColumnDef="status_pilotNumber_way_nearSpan">
       <th mat-header-cell *matHeaderCellDef style="text-align:center">狀況/人數<br style="text-align:center">方式/近跨</th>
-      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.status}}{{row.pilotNumber}}{{row.way}}{{row.nearSpan}}</td>
+      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.status}}/{{row.pilotNumber}}<br>{{row.way}}/{{row.nearSpan}}</td>
     </ng-container>
 
     <!-- tugboat_tons Column -->
 
     <ng-container matColumnDef="tugboat_tons">
       <th mat-header-cell *matHeaderCellDef style="text-align:center">拖船數<br style="text-align:center">總噸位</th>
-      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.tugboat}}{{row.tons}}</td>
+      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.tugboat}}/{{row.tons}}</td>
     </ng-container>
 
     <!-- agentCodeName_dangerousVsl Column -->
 
     <ng-container matColumnDef="agentCodeName_dangerousVsl">
       <th mat-header-cell *matHeaderCellDef style="text-align:center">港代理/代號<br style="text-align:center">危險品船</th>
-      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.agentCodeName}}{{row.dangerousVsl}}</td>
+      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.agentCodeName}}/{{row.dangerousVsl}}</td>
     </ng-container>
 
     <!-- departureTime_ETA Column -->
 
     <ng-container matColumnDef="departureTime_ETA">
       <th mat-header-cell *matHeaderCellDef style="text-align:center">出發時間<br style="text-align:center">船長報告ETA</th>
-      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.departureTime}}{{row.ETA}}</td>
+      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.departureTime}}<br>{{row.ETA}}</td>
     </ng-container>
 
     <!-- frontWaterline_HinderWaterline Column -->
 
     <ng-container matColumnDef="frontWaterline_HinderWaterline">
       <th mat-header-cell *matHeaderCellDef style="text-align:center">前吃水<br style="text-align:center">後吃水</th>
-      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.frontWaterline}}{{row.hinderWaterline}}</td>
+      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.frontWaterline}}<br>{{row.hinderWaterline}}</td>
     </ng-container>
 
     <!-- latestModifyDepartureTime_vslAge Column -->
@@ -83,21 +83,21 @@
 
     <ng-container matColumnDef="anchorTime_anchorPosition_bowThruster">
       <th mat-header-cell *matHeaderCellDef style="text-align:center">港外下錨時間<br style="text-align:center">港外錨位/艏推</th>
-      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.anchorTime}}{{row.anchorPosition}}{{row.anchorbowThruster}}</td>
+      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.anchorTime}}<br>{{row.anchorPosition}}/{{row.anchorbowThruster}}</td>
     </ng-container>
 
     <!-- bringCable_dispatchStation Column -->
 
     <ng-container matColumnDef="bringCable_dispatchStation">
       <th mat-header-cell *matHeaderCellDef style="text-align:center">帶解纜<br style="text-align:center">調度站</th>
-      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.bringCable}}{{row.dispatchStation}}</td>
+      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.bringCable}}/{{row.dispatchStation}}</td>
     </ng-container>
 
     <!-- previousPort_nextPort Column -->
 
     <ng-container matColumnDef="previousPort_nextPort">
       <th mat-header-cell *matHeaderCellDef style="text-align:center">前一港<br style="text-align:center">次一港</th>
-      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.previousPort}}{{row.nextPort}}</td>
+      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.previousPort}}<br>{{row.nextPort}}</td>
     </ng-container>
 
        <!-- guideBoatRemark Column -->
