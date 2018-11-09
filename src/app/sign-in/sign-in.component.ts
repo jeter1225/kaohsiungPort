@@ -9,8 +9,8 @@ import { ConfigLogService } from '../service-summary/config-log.service';
 })
 export class SignInComponent implements OnInit {
 
-  accountValue: string;
-  passwordValue: string;
+  accountValue: string = "";
+  passwordValue: string = "";
   confirmLog: boolean = true;
   
   constructor(
@@ -23,11 +23,11 @@ export class SignInComponent implements OnInit {
   }
 
   checkLog() {
-    if(this.accountValue == " " || this.passwordValue == " "){
-      console.error('error');
-    }
-    if(this.accountValue == "f" && this.passwordValue == "d"){
+    if(this.accountValue.length != 0 || this.passwordValue.length != 0){
       this.router.navigate(['homepage/information']);
+    }
+    else{
+      console.error('error occur!');
     }
   }
 
