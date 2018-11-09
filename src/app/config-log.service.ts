@@ -4,7 +4,6 @@ import { Observable, of } from 'rxjs';
 import { Hero } from './hero';
 import { catchError, map, tap } from 'rxjs/operators';
 import { PilotStatusTableItem } from './pilot-status-table/pilot-status-table-datasource';
-import { InformationTableItem } from './information-table/information-table-datasource';
 import { PilotOrderTableItem } from './pilot-order-table/pilot-order-table-datasource';
 
 
@@ -21,8 +20,8 @@ export class ConfigLogService {
   	private http: HttpClient,
 	) { }
 	
-	getInformation(): Observable<InformationTableItem[]> {
-  	return this.http.get<InformationTableItem[]>(this.informationTableUrl)
+	getInformation(): Observable<any> {
+  	return this.http.get<any>(this.informationTableUrl)
   	.pipe(
   		tap(information_table_list => this.log('fetched info list')),
   		catchError(this.handleError('getInformationTable--Error', []))
