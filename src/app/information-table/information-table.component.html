@@ -118,7 +118,7 @@
     <tr mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':  dataSource.data.length!=0}"></tr>
   </table>
 
-  <mat-paginator #paginator [length]="dataSource.data.length" [pageIndex]="0" [pageSize]="10" class="mat-paginator-sticky" showFirstLastButtons>
+  <mat-paginator #paginator [length]="dataSource.data.length" [pageIndex]="1" [pageSize]="10" class="mat-paginator-sticky" showFirstLastButtons>
   </mat-paginator>
 </div>
 
