@@ -16,15 +16,6 @@ export class HomepageComponent implements OnInit {
   ngOnInit() {
   }
 
-  showInformation(){
-    this.router.navigate(['information'], { relativeTo : this.route })
-  }
+  navLinks = [{label: 'Information', path: 'information'},{label: 'Status', path: 'status'},{label: 'Order', path: 'order'}]
 
-  showStatus(){
-    this.router.navigate(['status'], { relativeTo : this.route })
-  }
-
-  showOrder(){
-    this.router.navigate(['order'], { relativeTo : this.route })
-  }
 }

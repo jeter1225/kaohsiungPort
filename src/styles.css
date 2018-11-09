@@ -4,4 +4,7 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Roboto', sans-serif; }
 
-
+.mat-tab-nav-bar.mat-primary .mat-ink-bar  {
+    height: 100%;
+    opacity: 0.2;
+}

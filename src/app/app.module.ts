@@ -20,7 +20,7 @@ import { InformationTableComponent } from './information-table/information-table
 import { from } from 'rxjs';
 import { SendPasswordDialogComponent } from './dialog-summary/send-password-dialog/send-password-dialog.component';
 import { PilotOrderTableComponent } from './pilot-order-table/pilot-order-table.component';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -52,7 +52,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatSortModule,
     MatInputModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTabsModule
   ],
   entryComponents: [
     SendPasswordDialogComponent

@@ -1,6 +1,10 @@
-<p>
-  <button class="tabButton" mat-flat-button color="primary" (click) = "showInformation()">information</button>
-  <button class="tabButton" mat-flat-button color="primary" (click) = "showStatus()">status</button>
-  <button class="tabButton" mat-flat-button color="primary" (click) = "showOrder()">order</button>
-</p>
+<nav mat-tab-nav-bar mat-stretch-tabs>
+  <a mat-tab-link
+     *ngFor="let link of navLinks"
+     [routerLink]="link.path"
+     routerLinkActive #rla="routerLinkActive"
+     [active]="rla.isActive">
+    {{link.label}}
+  </a>
+</nav>
 <router-outlet></router-outlet>
