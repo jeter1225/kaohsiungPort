@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
-import { PilotStatusTableDataSource, PilotStatusTableItem } from './pilot-status-table-datasource';
 import { ConfigLogService } from '../config-log.service';
 
 @Component({
@@ -10,7 +9,6 @@ import { ConfigLogService } from '../config-log.service';
 })
 export class PilotStatusTableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  private dataInit: PilotStatusTableItem[];
   dataSource: MatTableDataSource<any>;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
@@ -20,7 +18,7 @@ export class PilotStatusTableComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource(this.dataInit);
+    this.dataSource = new MatTableDataSource();
     this.dataSource.paginator = this.paginator;
     this.configLogService.getPilotStatusList()
     .subscribe(pilot_status_list => this.dataSource.data = pilot_status_list);

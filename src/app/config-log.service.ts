@@ -3,8 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Hero } from './hero';
 import { catchError, map, tap } from 'rxjs/operators';
-import { PilotStatusTableItem } from './pilot-status-table/pilot-status-table-datasource';
-import { PilotOrderTableItem } from './pilot-order-table/pilot-order-table-datasource';
 
 
 @Injectable({
@@ -28,16 +26,16 @@ export class ConfigLogService {
   	);
 	}
 
-  getPilotStatusList(): Observable<PilotStatusTableItem[]> {
-  	return this.http.get<PilotStatusTableItem[]>(this.pilotStatusListUrl)
+  getPilotStatusList(): Observable<any> {
+  	return this.http.get<any>(this.pilotStatusListUrl)
   	.pipe(
   		tap(pilot_status_list => this.log('fetched status list')),
   		catchError(this.handleError('getPilotStatusList--Error', []))
   	);
 	}
 
-  getPilotOrderList(): Observable<PilotOrderTableItem[]> {
-		return this.http.get<PilotOrderTableItem[]>(this.pilotOrderListUrl)
+  getPilotOrderList(): Observable<any> {
+		return this.http.get<any>(this.pilotOrderListUrl)
   	.pipe(
   		tap(pilot_order_list => this.log('fetched order list')),
   		catchError(this.handleError('getPilotOrderList--Error', []))
