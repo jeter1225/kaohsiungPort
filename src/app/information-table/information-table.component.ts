@@ -24,8 +24,7 @@ export class InformationTableComponent implements OnInit {
   ngOnInit() {
       this.dataSource = new MatTableDataSource();
       this.dataSource.paginator = this.paginator;
-      this.configLogService.getInformation()
-      .subscribe(information_table_list => this.dataSource.data = information_table_list);
+      this.configLogService.getInformation().subscribe(information_table_list => this.dataSource.data = information_table_list);
       setTimeout(() => {console.log(this.dataSource.data)}, 3000);
     };
   onSearchClear(){
