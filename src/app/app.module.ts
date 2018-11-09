@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { InformationComponent } from './information/information.component';
 import { PilotOrderComponent } from './pilot-order/pilot-order.component';
 import { PilotStatusComponent } from './pilot-status/pilot-status.component';
-import { ConfigLogService } from './config-log.service';
+import { ConfigLogService } from './service-summary/config-log.service';
 import { InformationService } from './service-summary/information-service.service';
 import { PilotStatusService } from './service-summary/pilot-status-service.service';
 import { PilotOrderService } from './service-summary/pilot-order-service.service';

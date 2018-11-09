@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource} from '@angular/material';
-import { ConfigLogService } from '../config-log.service';
+import { InformationService } from '../service-summary/information-service.service';
 
 @Component({
   selector: 'app-information-table',
@@ -17,14 +17,14 @@ export class InformationTableComponent implements OnInit {
   'frontWaterline_HinderWaterline', 'latestModifyDepartureTime_vslAge', 'anchorTime_anchorPosition_bowThruster',
   'bringCable_dispatchStation', 'previousPort_nextPort', 'guideBoatRemark'];
 
-  constructor( private configLogService: ConfigLogService) {
+  constructor( private informationService: InformationService) {
     
   }
 
   ngOnInit() {
       this.dataSource = new MatTableDataSource();
       this.dataSource.paginator = this.paginator;
-      this.configLogService.getInformation().subscribe(information_table_list => this.dataSource.data = information_table_list);
+      this.informationService.getInformation().subscribe(information_table_list => this.dataSource.data = information_table_list);
       setTimeout(() => {console.log(this.dataSource.data)}, 3000);
     };
   onSearchClear(){
