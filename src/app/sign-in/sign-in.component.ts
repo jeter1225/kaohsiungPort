@@ -1,7 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ConfigLogService } from '../service-summary/config-log.service';
-import { NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-sign-in',
