@@ -1,17 +1,17 @@
 .butt-continue-ship {
     position: relative;
-    left: 1250px;
+    left: 80%;
     background-color: lightblue;
 }
 
 .butt-order-list {
     position: relative;
-    left: 1120px;
+    left: 60%;
     background-color: lightblue;
 }
 
 .butt-return-list {
     position: relative;
-    left: 1170px;
+    left: 70%;
     background-color: lightblue;
 }
