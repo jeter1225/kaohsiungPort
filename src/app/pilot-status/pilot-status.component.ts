@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { PilotBreakInspectComponent } from '../dialog-summary/pilot-break-inspect/pilot-break-inspect.component';
+import { FlowerLeaveInspectComponent } from '../dialog-summary/flower-leave-inspect/flower-leave-inspect.component';
 
 @Component({
   selector: 'app-pilot-status',
@@ -7,9 +10,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PilotStatusComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private dialog: MatDialog
+  ) { }
 
   ngOnInit() {
+  }
+
+  openBreakInspect() {
+    const fstDialogRef = this.dialog.open(PilotBreakInspectComponent, {
+      width: '300px',
+      height: '150px',
+    })
+    fstDialogRef.afterClosed().subscribe(result => {
+      console.log('The logout dialog is closed!');
+    });
+  }
+
+  openFlowerLeaveInspect() {
+    const sndDialogRef = this.dialog.open(FlowerLeaveInspectComponent, {
+      width: '300px',
+      height: '150px',
+    })
+    sndDialogRef.afterClosed().subscribe(result => {
+      console.log('The logout dialog is closed!');
+    });
   }
 
 }

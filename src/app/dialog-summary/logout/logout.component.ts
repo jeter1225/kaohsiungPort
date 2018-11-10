@@ -19,7 +19,6 @@ export class LogoutComponent implements OnInit {
   }
 
   clickLogout(): void {
-    this.dialogRef.close();
     this.router.navigate(['sign-in']);
   }
 

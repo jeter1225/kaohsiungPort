@@ -27,6 +27,11 @@ import { SendPasswordDialogComponent } from './dialog-summary/send-password-dial
 import { PilotOrderTableComponent } from './pilot-order-table/pilot-order-table.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { LogoutComponent } from './dialog-summary/logout/logout.component';
+import { PilotBreakInspectComponent } from './dialog-summary/pilot-break-inspect/pilot-break-inspect.component';
+import { FlowerLeaveInspectComponent } from './dialog-summary/flower-leave-inspect/flower-leave-inspect.component';
+import { PilotOrderChangeOrderComponent } from './dialog-summary/pilot-order-change-order/pilot-order-change-order.component';
+import { PilotOrderReturnComponent } from './dialog-summary/pilot-order-return/pilot-order-return.component';
+import { PilotOrderContinueShipComponent } from './dialog-summary/pilot-order-continue-ship/pilot-order-continue-ship.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +46,12 @@ import { LogoutComponent } from './dialog-summary/logout/logout.component';
     InformationTableComponent,
     SendPasswordDialogComponent,
     PilotOrderTableComponent,
-    LogoutComponent
+    LogoutComponent,
+    PilotBreakInspectComponent,
+    FlowerLeaveInspectComponent,
+    PilotOrderChangeOrderComponent,
+    PilotOrderReturnComponent,
+    PilotOrderContinueShipComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +73,12 @@ import { LogoutComponent } from './dialog-summary/logout/logout.component';
   ],
   entryComponents: [
     SendPasswordDialogComponent,
-    LogoutComponent
+    LogoutComponent,
+    PilotBreakInspectComponent,
+    FlowerLeaveInspectComponent,
+    PilotOrderChangeOrderComponent,
+    PilotOrderReturnComponent,
+    PilotOrderContinueShipComponent
   ],
   providers: [ConfigLogService, InformationService, PilotOrderService, PilotStatusService],
   bootstrap: [AppComponent]

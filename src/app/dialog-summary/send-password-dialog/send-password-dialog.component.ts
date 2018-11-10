@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { ConfirmSentPasswordComponent } from '../confirm-sent-password/confirm-sent-password.component';
 
 @Component({
   selector: 'app-send-password-dialog',
@@ -9,14 +10,11 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 export class SendPasswordDialogComponent implements OnInit {
 
   constructor(
-    private dialogRef: MatDialogRef<SendPasswordDialogComponent>
+    private dialogRef: MatDialogRef<SendPasswordDialogComponent>,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit() {
-  }
-
-  onNoClick(): void {
-    this.dialogRef.close();
   }
 
 }

@@ -6,5 +6,5 @@
   </p>
 </div>
 <div mat-dialog-actions class = "logout-butt">
-  <button mat-stroked-button (click)="clickLogout()">登出</button>
+  <button mat-stroked-button [mat-dialog-close] = "true" (click)="clickLogout()">登出</button>
 </div>
