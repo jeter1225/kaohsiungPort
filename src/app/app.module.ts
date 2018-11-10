@@ -15,7 +15,9 @@ import { PilotStatusService } from './service-summary/pilot-status-service.servi
 import { PilotOrderService } from './service-summary/pilot-order-service.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule, MatPaginatorModule, MatSortModule ,MatFormFieldModule, MatInputModule, MatIconModule} from '@angular/material';
-import { FormsModule} from '@angular/forms';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatRadioModule } from '@angular/material/radio';
+import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { PilotStatusTableComponent } from './pilot-status-table/pilot-status-table.component';
@@ -24,6 +26,7 @@ import { from } from 'rxjs';
 import { SendPasswordDialogComponent } from './dialog-summary/send-password-dialog/send-password-dialog.component';
 import { PilotOrderTableComponent } from './pilot-order-table/pilot-order-table.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { LogoutComponent } from './dialog-summary/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     PilotStatusTableComponent,
     InformationTableComponent,
     SendPasswordDialogComponent,
-    PilotOrderTableComponent
+    PilotOrderTableComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -53,10 +57,13 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatInputModule,
     FormsModule,
     MatDialogModule,
-    MatTabsModule
+    MatTabsModule,
+    MatToolbarModule,
+    MatRadioModule
   ],
   entryComponents: [
-    SendPasswordDialogComponent
+    SendPasswordDialogComponent,
+    LogoutComponent
   ],
   providers: [ConfigLogService, InformationService, PilotOrderService, PilotStatusService],
   bootstrap: [AppComponent]

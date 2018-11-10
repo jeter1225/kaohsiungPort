@@ -1,10 +1,17 @@
-<nav mat-tab-nav-bar mat-stretch-tabs>
-  <a mat-tab-link
-     *ngFor="let link of navLinks"
-     [routerLink]="link.path"
-     routerLinkActive #rla="routerLinkActive"
-     [active]="rla.isActive">
-    {{link.label}}
-  </a>
-</nav>
+<mat-toolbar class = "toptoolbar">
+  <nav mat-tab-nav-bar mat-stretch-tabs>
+    <a mat-tab-link
+      *ngFor="let link of navLinks"
+      [routerLink]="link.path"
+      routerLinkActive #rla="routerLinkActive"
+      [active]="rla.isActive">
+      {{link.label}}
+    </a>
+  </nav>
+  <span class = "toolbar-seperate"></span>
+  <button mat-mini-fab color = "primary" (click) = "openLogoutDialog()">
+    元均
+  </button>
+</mat-toolbar>
+
 <router-outlet></router-outlet>

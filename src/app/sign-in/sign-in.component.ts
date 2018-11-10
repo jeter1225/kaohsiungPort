@@ -11,7 +11,6 @@ export class SignInComponent implements OnInit {
 
   accountValue: string = "";
   passwordValue: string = "";
-  confirmLog: boolean = true;
   
   constructor(
     private configLogService: ConfigLogService,
@@ -20,10 +19,12 @@ export class SignInComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.accountValue = "";
+    this.passwordValue = "";
   }
 
   checkLog() {
-    if(this.accountValue.length != 0 || this.passwordValue.length != 0){
+    if(this.accountValue.length != 0 && this.passwordValue.length != 0){
       this.router.navigate(['homepage/information']);
     }
     else{
