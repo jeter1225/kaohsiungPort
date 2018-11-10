@@ -32,6 +32,9 @@ import { FlowerLeaveInspectComponent } from './dialog-summary/flower-leave-inspe
 import { PilotOrderChangeOrderComponent } from './dialog-summary/pilot-order-change-order/pilot-order-change-order.component';
 import { PilotOrderReturnComponent } from './dialog-summary/pilot-order-return/pilot-order-return.component';
 import { PilotOrderContinueShipComponent } from './dialog-summary/pilot-order-continue-ship/pilot-order-continue-ship.component';
+import { PilotOrderContinueShipTableComponent } from './pilot-order-continue-record-table/pilot-order-continue-record-table.component';
+import { PilotOrderChangeOrderTableComponent } from './pilot-order-change-order-table/pilot-order-change-order-table.component';
+import { PilotOrderReturnTableComponent } from './pilot-order-return-table/pilot-order-return-table.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +54,10 @@ import { PilotOrderContinueShipComponent } from './dialog-summary/pilot-order-co
     FlowerLeaveInspectComponent,
     PilotOrderChangeOrderComponent,
     PilotOrderReturnComponent,
-    PilotOrderContinueShipComponent
+    PilotOrderContinueShipComponent,
+    PilotOrderContinueShipTableComponent,
+    PilotOrderChangeOrderTableComponent,
+    PilotOrderReturnTableComponent
   ],
   imports: [
     BrowserModule,

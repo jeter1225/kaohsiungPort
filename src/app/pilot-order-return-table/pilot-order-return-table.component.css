@@ -1,0 +1,33 @@
+.PilotOrderReturnTable {
+    width: 80%;
+    margin: 20px auto;
+    height: 50%;
+    overflow: auto;
+    padding: 1em;
+    border: 0.5em;
+}
+
+table {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.mat-paginator-sticky {
+    bottom: 0px;
+    position: sticky;
+    z-index: 10;
+}
+
+.hide{
+    display: none;
+}
+td.load{
+    justify-content: center;
+    text-align: center;
+    font-style: italic;
+}
+
+

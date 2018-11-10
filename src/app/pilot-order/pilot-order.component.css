@@ -1,18 +1,15 @@
 .butt-continue-ship {
     position: relative;
     left: 80%;
-    background-color: lightblue;
     margin: 0.5em;
 }
 
 .butt-order-list {
     position: relative;
     left: 60%;
-    background-color: lightblue;
 }
 
 .butt-return-list {
     position: relative;
     left: 70%;
-    background-color: lightblue;
 }

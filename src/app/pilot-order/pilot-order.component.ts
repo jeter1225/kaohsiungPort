@@ -21,8 +21,8 @@ export class PilotOrderComponent implements OnInit {
 
   openChangeOrder() {
     const fstDialogRef = this.dialog.open(PilotOrderChangeOrderComponent, {
-      width: '300px',
-      height: '150px',
+      width: '1000px',
+      height: '500px',
     })
     fstDialogRef.afterClosed().subscribe(result => {
       console.log('The logout dialog is closed!');
@@ -31,8 +31,8 @@ export class PilotOrderComponent implements OnInit {
 
   openReturn() {
     const sndDialogRef = this.dialog.open(PilotOrderReturnComponent, {
-      width: '300px',
-      height: '150px',
+      width: '1000px',
+      height: '500px',
     })
     sndDialogRef.afterClosed().subscribe(result => {
       console.log('The logout dialog is closed!');
@@ -41,8 +41,8 @@ export class PilotOrderComponent implements OnInit {
 
   openContinueShip() {
     const thrDialogRef = this.dialog.open(PilotOrderContinueShipComponent, {
-      width: '300px',
-      height: '150px',
+      width: '1000px',
+      height: '500px',
     })
     thrDialogRef.afterClosed().subscribe(result => {
       console.log('The logout dialog is closed!');
