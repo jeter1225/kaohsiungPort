@@ -9,7 +9,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 export class SendPasswordDialogComponent implements OnInit {
 
   constructor(
-    public dialogRef: MatDialogRef<SendPasswordDialogComponent>
+    private dialogRef: MatDialogRef<SendPasswordDialogComponent>
   ) { }
 
   ngOnInit() {
