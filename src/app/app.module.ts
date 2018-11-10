@@ -26,6 +26,8 @@ import { from } from 'rxjs';
 import { SendPasswordDialogComponent } from './dialog-summary/send-password-dialog/send-password-dialog.component';
 import { PilotOrderTableComponent } from './pilot-order-table/pilot-order-table.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSelectModule } from '@angular/material/select';
 import { LogoutComponent } from './dialog-summary/logout/logout.component';
 import { PilotBreakInspectComponent } from './dialog-summary/pilot-break-inspect/pilot-break-inspect.component';
 import { FlowerLeaveInspectComponent } from './dialog-summary/flower-leave-inspect/flower-leave-inspect.component';
@@ -75,7 +77,9 @@ import { PilotOrderReturnTableComponent } from './pilot-order-return-table/pilot
     MatDialogModule,
     MatTabsModule,
     MatToolbarModule,
-    MatRadioModule
+    MatRadioModule,
+    MatMenuModule,
+    MatSelectModule
   ],
   entryComponents: [
     SendPasswordDialogComponent,
