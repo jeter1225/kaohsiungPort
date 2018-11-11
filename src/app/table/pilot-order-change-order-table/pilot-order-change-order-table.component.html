@@ -25,10 +25,10 @@
       <th mat-header-cell *matHeaderCellDef style = "text-align: center">更改原因</th>
       <td mat-cell *matCellDef = "let row" style = "text-align: center">
         <mat-form-field>
-            <mat-select placeholder = "更改原因" [formControl] = "changeControl">
-              <mat-option *ngFor = "let change of changeReason" [value] = "change.value">{{change.viewValue}}</mat-option>
-            </mat-select>
-          </mat-form-field>
+          <mat-select placeholder = "更改原因" [formControl] = "changeControl">
+            <mat-option *ngFor = "let change of changeReason" [value] = "change.value">{{change.viewValue}}</mat-option>
+          </mat-select>
+        </mat-form-field>
       </td>
     </ng-container>
 

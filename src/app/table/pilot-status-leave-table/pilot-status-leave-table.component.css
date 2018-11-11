@@ -1,4 +1,4 @@
-.pilotOrderTable {
+.PilotStatusLeaveTable {
     width: 80%;
     margin: 20px auto;
     height: 50%;
@@ -15,12 +15,6 @@ a {
     text-decoration: none;
 }
 
-.mat-paginator-sticky {
-    bottom: 0px;
-    position: sticky;
-    z-index: 10;
-}
-
 .hide{
     display: none;
 }
@@ -29,3 +23,13 @@ td.load{
     text-align: center;
     font-style: italic;
 }
+
+.fillin {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.fillin-butt {
+    margin: 5px;
+}
+
