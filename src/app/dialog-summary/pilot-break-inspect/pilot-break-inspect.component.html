@@ -1,3 +1,8 @@
-<p>
-  pilot-break-inspect works!
-</p>
+<h1 mat-dialog-title style = "text-align: center">掛牌檢視</h1>
+<div mat-dialog-content>
+  <app-pilot-status-break-inspect-table></app-pilot-status-break-inspect-table>
+</div>
+<div mat-dialog-actions>
+  <button mat-stroked-button [mat-dialog-close] = "true">確認</button>
+  <button mat-stroked-button [mat-dialog-close] = "true">返回</button>
+</div>

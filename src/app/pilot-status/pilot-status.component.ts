@@ -19,8 +19,8 @@ export class PilotStatusComponent implements OnInit {
 
   openBreakInspect() {
     const fstDialogRef = this.dialog.open(PilotBreakInspectComponent, {
-      width: '300px',
-      height: '150px',
+      width: '1000px',
+      height: '500px',
     })
     fstDialogRef.afterClosed().subscribe(result => {
       console.log('The logout dialog is closed!');
@@ -29,8 +29,8 @@ export class PilotStatusComponent implements OnInit {
 
   openFlowerLeaveInspect() {
     const sndDialogRef = this.dialog.open(FlowerLeaveInspectComponent, {
-      width: '300px',
-      height: '150px',
+      width: '1000px',
+      height: '500px',
     })
     sndDialogRef.afterClosed().subscribe(result => {
       console.log('The logout dialog is closed!');

@@ -28,6 +28,8 @@ import { PilotOrderTableComponent } from './table/pilot-order-table/pilot-order-
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { LogoutComponent } from './dialog-summary/logout/logout.component';
 import { PilotBreakInspectComponent } from './dialog-summary/pilot-break-inspect/pilot-break-inspect.component';
 import { FlowerLeaveInspectComponent } from './dialog-summary/flower-leave-inspect/flower-leave-inspect.component';
@@ -41,6 +43,8 @@ import { PilotStatusLeaveTableComponent } from './table/pilot-status-leave-table
 import { PilotStatusBreakTableComponent } from './table/pilot-status-break-table/pilot-status-break-table.component';
 import { LeaveDialogComponent } from './dialog-summary/leave-dialog/leave-dialog.component';
 import { BreakDialogComponent } from './dialog-summary/break-dialog/break-dialog.component';
+import { PilotStatusBreakInspectTableComponent } from './table/pilot-status-break-inspect-table/pilot-status-break-inspect-table.component';
+import { PilotStatusFlowerInspectTableComponent } from './table/pilot-status-flower-inspect-table/pilot-status-flower-inspect-table.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +71,9 @@ import { BreakDialogComponent } from './dialog-summary/break-dialog/break-dialog
     LeaveDialogComponent,
     BreakDialogComponent,
     PilotStatusLeaveTableComponent,
-    PilotStatusBreakTableComponent
+    PilotStatusBreakTableComponent,
+    PilotStatusBreakInspectTableComponent,
+    PilotStatusFlowerInspectTableComponent
   ],
   imports: [
     BrowserModule,
@@ -88,7 +94,9 @@ import { BreakDialogComponent } from './dialog-summary/break-dialog/break-dialog
     MatToolbarModule,
     MatRadioModule,
     MatMenuModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCheckboxModule,
+    MatCardModule
   ],
   entryComponents: [
     SendPasswordDialogComponent,
@@ -99,7 +107,9 @@ import { BreakDialogComponent } from './dialog-summary/break-dialog/break-dialog
     PilotOrderReturnComponent,
     PilotOrderContinueShipComponent,
     LeaveDialogComponent,
-    BreakDialogComponent
+    BreakDialogComponent,
+    PilotStatusBreakInspectTableComponent,
+    PilotStatusFlowerInspectTableComponent
   ],
   providers: [ConfigLogService, InformationService, PilotOrderService, PilotStatusService],
   bootstrap: [AppComponent]
