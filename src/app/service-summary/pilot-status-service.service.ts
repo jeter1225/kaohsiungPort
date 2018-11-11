@@ -1,18 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable, of, BehaviorSubject } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class PilotStatusService {
-	private pilotStatusListUrl = 'http://fleet-geode-218517.appspot.com/api/pilot/';
+	private pilotStatusListUrl = 'http://fleet-geode-218517.appspot.com/api/status/';
 
   constructor(
-  	private http: HttpClient,
+		private http: HttpClient
 	) { }
+
+	private pilotIdSource: string;
+	private pilotNameSource: string;
 
   getPilotStatusList(): Observable<any> {
   	return this.http.get<any>(this.pilotStatusListUrl)
@@ -20,6 +22,15 @@ export class PilotStatusService {
   		tap(pilot_status_list => this.log('fetched status list')),
   		catchError(this.handleError('getPilotStatusList--Error', []))
   	);
+	}
+
+	givePilotStatusData(id: string, name: string): void {
+		this.pilotIdSource = id;
+		this.pilotNameSource = name;
+	}
+
+	getPilotStatusData() {
+		return (this.pilotIdSource + " " + this.pilotNameSource)
 	}
 
   private handleError<T> (operation = 'operation', result?: T) {

@@ -37,6 +37,10 @@ import { PilotOrderContinueShipComponent } from './dialog-summary/pilot-order-co
 import { PilotOrderContinueShipTableComponent } from './table/pilot-order-continue-record-table/pilot-order-continue-record-table.component';
 import { PilotOrderChangeOrderTableComponent } from './table/pilot-order-change-order-table/pilot-order-change-order-table.component';
 import { PilotOrderReturnTableComponent } from './table/pilot-order-return-table/pilot-order-return-table.component';
+import { PilotStatusLeaveTableComponent } from './table/pilot-status-leave-table/pilot-status-leave-table.component';
+import { PilotStatusBreakTableComponent } from './table/pilot-status-break-table/pilot-status-break-table.component';
+import { LeaveDialogComponent } from './dialog-summary/leave-dialog/leave-dialog.component';
+import { BreakDialogComponent } from './dialog-summary/break-dialog/break-dialog.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +63,11 @@ import { PilotOrderReturnTableComponent } from './table/pilot-order-return-table
     PilotOrderContinueShipComponent,
     PilotOrderContinueShipTableComponent,
     PilotOrderChangeOrderTableComponent,
-    PilotOrderReturnTableComponent
+    PilotOrderReturnTableComponent,
+    LeaveDialogComponent,
+    BreakDialogComponent,
+    PilotStatusLeaveTableComponent,
+    PilotStatusBreakTableComponent
   ],
   imports: [
     BrowserModule,
@@ -89,7 +97,9 @@ import { PilotOrderReturnTableComponent } from './table/pilot-order-return-table
     FlowerLeaveInspectComponent,
     PilotOrderChangeOrderComponent,
     PilotOrderReturnComponent,
-    PilotOrderContinueShipComponent
+    PilotOrderContinueShipComponent,
+    LeaveDialogComponent,
+    BreakDialogComponent
   ],
   providers: [ConfigLogService, InformationService, PilotOrderService, PilotStatusService],
   bootstrap: [AppComponent]
