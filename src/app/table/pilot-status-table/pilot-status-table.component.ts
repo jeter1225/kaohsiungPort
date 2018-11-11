@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
-import { PilotStatusService } from '../service-summary/pilot-status-service.service';
+import { PilotStatusService } from '../../service-summary/pilot-status-service.service';
 
 @Component({
   selector: 'app-pilot-status-table',

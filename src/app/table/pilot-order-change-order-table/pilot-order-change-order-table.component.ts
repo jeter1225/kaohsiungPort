@@ -1,6 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
-import { PilotOrderService } from '../service-summary/pilot-order-service.service';
+import { PilotOrderService } from '../../service-summary/pilot-order-service.service';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+
+export interface changeReasonType {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-pilot-order-change-order-table',
@@ -11,6 +17,13 @@ export class PilotOrderChangeOrderTableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   dataSource: MatTableDataSource<any>;
   totalCount: number;
+  changeControl = new FormControl();
+
+  changeReason: changeReasonType[] = [
+    {value: 'exchange', viewValue: '交換'},
+    {value: 'correct', viewValue: '修正'},
+    {value: 'other', viewValue: '其它'}
+  ];
 
   constructor( private pilotOrderService: PilotOrderService ) { }
 

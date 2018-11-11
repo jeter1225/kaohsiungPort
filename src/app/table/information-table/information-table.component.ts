@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource} from '@angular/material';
-import { InformationService } from '../service-summary/information-service.service';
+import { InformationService } from '../../service-summary/information-service.service';
 
 @Component({
   selector: 'app-information-table',

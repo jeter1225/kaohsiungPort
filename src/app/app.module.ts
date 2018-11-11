@@ -17,14 +17,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule, MatPaginatorModule, MatSortModule ,MatFormFieldModule, MatInputModule, MatIconModule} from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatRadioModule } from '@angular/material/radio';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import { PilotStatusTableComponent } from './pilot-status-table/pilot-status-table.component';
-import { InformationTableComponent } from './information-table/information-table.component';
+import { PilotStatusTableComponent } from './table/pilot-status-table/pilot-status-table.component';
+import { InformationTableComponent } from './table/information-table/information-table.component';
 import { from } from 'rxjs';
 import { SendPasswordDialogComponent } from './dialog-summary/send-password-dialog/send-password-dialog.component';
-import { PilotOrderTableComponent } from './pilot-order-table/pilot-order-table.component';
+import { PilotOrderTableComponent } from './table/pilot-order-table/pilot-order-table.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
@@ -34,9 +34,9 @@ import { FlowerLeaveInspectComponent } from './dialog-summary/flower-leave-inspe
 import { PilotOrderChangeOrderComponent } from './dialog-summary/pilot-order-change-order/pilot-order-change-order.component';
 import { PilotOrderReturnComponent } from './dialog-summary/pilot-order-return/pilot-order-return.component';
 import { PilotOrderContinueShipComponent } from './dialog-summary/pilot-order-continue-ship/pilot-order-continue-ship.component';
-import { PilotOrderContinueShipTableComponent } from './pilot-order-continue-record-table/pilot-order-continue-record-table.component';
-import { PilotOrderChangeOrderTableComponent } from './pilot-order-change-order-table/pilot-order-change-order-table.component';
-import { PilotOrderReturnTableComponent } from './pilot-order-return-table/pilot-order-return-table.component';
+import { PilotOrderContinueShipTableComponent } from './table/pilot-order-continue-record-table/pilot-order-continue-record-table.component';
+import { PilotOrderChangeOrderTableComponent } from './table/pilot-order-change-order-table/pilot-order-change-order-table.component';
+import { PilotOrderReturnTableComponent } from './table/pilot-order-return-table/pilot-order-return-table.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +74,7 @@ import { PilotOrderReturnTableComponent } from './pilot-order-return-table/pilot
     MatSortModule,
     MatInputModule,
     FormsModule,
+    ReactiveFormsModule,
     MatDialogModule,
     MatTabsModule,
     MatToolbarModule,

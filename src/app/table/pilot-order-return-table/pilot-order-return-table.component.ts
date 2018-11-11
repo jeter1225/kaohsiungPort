@@ -1,7 +1,18 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
-import { PilotOrderService } from '../service-summary/pilot-order-service.service';
-import { FormControl } from '@angular/forms';
+import { PilotOrderService } from '../../service-summary/pilot-order-service.service';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+
+export interface returnType {
+  value: string;
+  viewValue: string;
+}
+
+export interface returnTypeGroup {
+  disabled?: boolean;
+  type_name: string;
+  types: returnType[];
+}
 
 @Component({
   selector: 'app-pilot-order-return-table',
@@ -12,6 +23,24 @@ export class PilotOrderReturnTableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   dataSource: MatTableDataSource<any>;
   totalCount: number;
+  returnControl = new FormControl();
+
+  returnTypeGroups: returnTypeGroup[] = [
+    {
+      type_name: '無線電',
+      types: [
+        {value: 'radio', viewValue: '無線電'}
+      ]
+    },
+    {
+      type_name: '電話',
+      types: [
+        {value: 'noPower', viewValue: '對講機沒電'},
+        {value: 'pilotDemand', viewValue: '領港要求'},
+        {value: 'other', viewValue: '其他'}
+      ]
+    }
+  ];
 
   constructor( private pilotOrderService: PilotOrderService ) { }
 
