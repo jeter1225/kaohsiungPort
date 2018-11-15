@@ -14,3 +14,20 @@ body { margin: 0; font-family: 'Roboto', sans-serif; }
     position: relative;
     left: 70%;
 }
+
+.mat-select.mat-select-placeholder {
+    color: white;
+}
+
+.mat-select-content {
+    background-color: #A0A1A2;
+}
+
+.mat-select-value {
+    color: white;
+}
+
+.mat-form-field-label {
+    color: white;
+}
+

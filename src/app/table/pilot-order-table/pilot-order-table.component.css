@@ -22,3 +22,20 @@ td.load{
     text-align: center;
     font-style: italic;
 }
+
+.mat-row:nth-child(even){
+    background-color: #A0A1A2;
+}
+
+.mat-row:nth-child(odd){
+    background-color: #6B8295;
+}
+
+.mat-header-cell {
+    background-color: #083150;
+    color: white;
+}
+
+.mat-cell {
+    color: white;
+}
