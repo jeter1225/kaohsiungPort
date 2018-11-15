@@ -15,11 +15,14 @@
       <th mat-header-cell *matHeaderCellDef style = "text-align: center">回班</th>
       <td mat-cell *matCellDef = "let row" style = "text-align: center">
         <mat-form-field>
-          <mat-select placeholder = "回班" [formControl] = "returnControl">
+          <mat-select placeholder = "回班" [formControl] = "returnControl" [value] = "selectedOption">
             <mat-optgroup *ngFor = "let returnGroup of returnTypeGroups" [label] = "returnGroup.type_name" [disabled] = returnGroup.disabled>
               <mat-option *ngFor = "let return of returnGroup.types" [value] = return.value>{{return.viewValue}}</mat-option>
             </mat-optgroup>
           </mat-select>
+        </mat-form-field>
+        <mat-form-field class = "return_reason_other" floatLabel = "never">
+          <input matInput type = "text" placeholder = "Reason" autocomplete = "off" [disabled] = "returnControl.value">
         </mat-form-field>
       </td>
     </ng-container>

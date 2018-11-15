@@ -30,4 +30,9 @@ td.load{
     font-style: italic;
 }
 
+.return_reason_other {
+    padding: 1em;
+    border: 0.5em;
+}
+
 

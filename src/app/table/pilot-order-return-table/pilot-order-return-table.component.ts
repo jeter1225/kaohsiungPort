@@ -24,6 +24,7 @@ export class PilotOrderReturnTableComponent implements OnInit {
   dataSource: MatTableDataSource<any>;
   totalCount: number;
   returnControl = new FormControl();
+  selectedOPtion: string;
 
   returnTypeGroups: returnTypeGroup[] = [
     {
