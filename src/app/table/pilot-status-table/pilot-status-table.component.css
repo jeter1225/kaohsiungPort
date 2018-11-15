@@ -1,8 +1,9 @@
 .pilotStatusTable {
-    width: 100%;
+    width: 90% auto;
     margin: 20px auto;
-    height: 70%;
+    height: auto;
     overflow: auto;
+    box-shadow: none !important;
 }
 
 table {

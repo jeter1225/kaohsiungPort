@@ -16,7 +16,7 @@
         <ng-container matColumnDef = "return_type">
           <th mat-header-cell *matHeaderCellDef style = "text-align: center">回班</th>
           <td mat-cell *matCellDef = "let row" style = "text-align: center">
-            <mat-form-field>
+            <mat-form-field floatLabel = "never">
               <mat-select placeholder = "回班">
                 <mat-optgroup *ngFor = "let returnGroup of returnTypeGroups" [label] = "returnGroup.type_name"
                               [disabled] = returnGroup.disabled (selectionChange) = "select_change(returnGroup)">

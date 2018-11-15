@@ -1,10 +1,9 @@
 .pilotOrderTable {
-    width: 80%;
-    margin: 20px auto;
-    height: 50%;
+    width: 100% auto;
+    height: 70% auto;
     overflow: auto;
-    padding: 1em;
-    border: 0.5em;
+    margin: 20px auto;
+    box-shadow: none !important;
 }
 
 table {
@@ -13,12 +12,6 @@ table {
 
 a {
     text-decoration: none;
-}
-
-.mat-paginator-sticky {
-    bottom: 0px;
-    position: sticky;
-    z-index: 10;
 }
 
 .hide{

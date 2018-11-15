@@ -1,10 +1,9 @@
 .PilotStatusBreakTable {
-    width: 80%;
+    width: 90%;
     margin: 20px auto;
-    height: 50%;
+    height: 50% auto;
     overflow: auto;
-    padding: 1em;
-    border: 0.5em;
+    box-shadow: none !important;
 }
 
 table {

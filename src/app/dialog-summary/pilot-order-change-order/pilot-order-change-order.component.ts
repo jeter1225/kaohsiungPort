@@ -15,7 +15,6 @@ export interface changeReasonType {
   styleUrls: ['./pilot-order-change-order.component.css']
 })
 export class PilotOrderChangeOrderComponent implements OnInit {
-  @ViewChild(MatPaginator) paginator: MatPaginator;
   dataSource: MatTableDataSource<any>;
   totalCount: number;
   changeControl = new FormControl();
@@ -39,7 +38,6 @@ export class PilotOrderChangeOrderComponent implements OnInit {
     .subscribe(pilot_order_change_order_list => {
       this.dataSource.data = pilot_order_change_order_list;
       this.totalCount = pilot_order_change_order_list.items.length;
-      this.dataSource.paginator = this.paginator;
     }
     );
   }

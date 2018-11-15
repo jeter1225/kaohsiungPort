@@ -1,4 +1,5 @@
 <!-- <mat-toolbar class = "toptoolbar"> -->
+<div>
   <nav mat-tab-nav-bar mat-stretch-tabs>
     <a mat-tab-link
       *ngFor="let link of navLinks"
@@ -7,12 +8,10 @@
       [active]="rla.isActive">
       {{link.label}}
     </a>
-    <button mat-mini-fab color = "primary" (click) = "openLogoutDialog()">
-      元均
+    <button class = "logout-butt" mat-mini-fab color = "primary" (click) = "openLogoutDialog()">
+        元均
     </button>
   </nav>
-  <!-- <span class = "toolbar-seperate"></span> -->
-  
-<!-- </mat-toolbar> -->
+</div>
 
 <router-outlet></router-outlet>

@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'kaohsiungPort';
+  title = '高雄港智慧排程資訊系統';
 }
