@@ -103,13 +103,18 @@ td.load{
 .search-div{
     margin: 10px;
 }
+.reference-div{
+    margin: 10px;
+}
 
 .search-form-field{
-    width: 60%;
+    width: 15%;
     margin-left: 5px;
     padding: 1px 5px;
     border-radius: 1px;
 }
+
+
 
 .search-form-field div.mat-form-field-underline {
     display: none;
@@ -130,5 +135,5 @@ td.load{
 
 .auto-assign-ship {
     position: relative;
-    left: 30%;
+    left: 25%;
 }

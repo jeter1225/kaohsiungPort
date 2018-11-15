@@ -72,4 +72,13 @@ export class InformationTableComponent implements OnInit {
     this.filterJson.agentCodeName = this.searchKey4.trim().toLowerCase();
     this.dataSource.filter = JSON.stringify(this.filterJson);
   };
+  ebbFlowIn(){
+    window.open('');
+  }
+  ebbFlowOut(){
+    window.open('http://163.29.117.247/port/');
+  }
+  windDirection(){
+    window.open('http://163.29.117.214/DelphiWWW/VDMSWWW_MET.html');
+  }
 }
