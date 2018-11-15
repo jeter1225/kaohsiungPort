@@ -1,25 +1,39 @@
+
+<div>
+  <label class="reference-div">資訊</label>
+  <button class="reference-div" mat-stroked-button color = "primary" (click)="ebbFlowOut()">
+      潮汐(外)
+  </button>
+  <button class="reference-div" mat-stroked-button color = "primary" (click)="ebbFlowIn()">
+      潮汐(內)
+  </button>
+  <button class="reference-div" mat-stroked-button color = "primary" (click)="windDirection()">
+      一、二港口風力風向、過港隧道水深及流向流速 
+  </button>
+</div>
 <div class="search-div">
+  <label>搜尋</label>
   <mat-form-field class="search-form-field" floatLabel = "never">
     <input matInput type = "text" [(ngModel)]="searchKey1" placeholder="船舶編號" autocomplete="off" (keyup) = "applyFilter1()">
     <button mat-button *ngIf= "searchKey1" matSuffix mat-icon-button aria-label="Clear" (click)="onSearchClear1()" >
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>
-  <span>d</span>
+
   <mat-form-field class="search-form-field" floatLabel = "never">
     <input matInput type = "text" [(ngModel)]="searchKey2" placeholder="中英船名" autocomplete="off" (keyup) = "applyFilter2()">
     <button mat-button *ngIf= "searchKey2" matSuffix mat-icon-button aria-label="Clear" (click)="onSearchClear2()" >
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>
-  <span>d</span>
+
   <mat-form-field class="search-form-field" floatLabel = "never">
     <input matInput type = "text" [(ngModel)]="searchKey3" placeholder="靠泊碼頭" autocomplete="off" (keyup) = "applyFilter3()">
     <button mat-button *ngIf= "searchKey3" matSuffix mat-icon-button aria-label="Clear" (click)="onSearchClear3()" >
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>
-  <span>d</span>
+
   <mat-form-field class="search-form-field" floatLabel = "never">
     <input matInput type = "text" [(ngModel)]="searchKey4" placeholder="港代理編號" autocomplete="off" (keyup) = "applyFilter4()">
     <button mat-button *ngIf= "searchKey4" matSuffix mat-icon-button aria-label="Clear" (click)="onSearchClear4()" >
@@ -29,6 +43,7 @@
 
   <button mat-stroked-button class = "auto-assign-ship">自動簽船</button>
 </div>
+
 <div class="mat-elevation-z8 informationTable">
   <table mat-table #table [dataSource]="dataSource"  aria-label="Elements">
 
