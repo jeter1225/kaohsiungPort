@@ -36,15 +36,8 @@ import { FlowerLeaveInspectComponent } from './dialog-summary/flower-leave-inspe
 import { PilotOrderChangeOrderComponent } from './dialog-summary/pilot-order-change-order/pilot-order-change-order.component';
 import { PilotOrderReturnComponent } from './dialog-summary/pilot-order-return/pilot-order-return.component';
 import { PilotOrderContinueShipComponent } from './dialog-summary/pilot-order-continue-ship/pilot-order-continue-ship.component';
-import { PilotOrderContinueShipTableComponent } from './table/pilot-order-continue-record-table/pilot-order-continue-record-table.component';
-import { PilotOrderChangeOrderTableComponent } from './table/pilot-order-change-order-table/pilot-order-change-order-table.component';
-import { PilotOrderReturnTableComponent } from './table/pilot-order-return-table/pilot-order-return-table.component';
-import { PilotStatusLeaveTableComponent } from './table/pilot-status-leave-table/pilot-status-leave-table.component';
-import { PilotStatusBreakTableComponent } from './table/pilot-status-break-table/pilot-status-break-table.component';
 import { LeaveDialogComponent } from './dialog-summary/leave-dialog/leave-dialog.component';
 import { BreakDialogComponent } from './dialog-summary/break-dialog/break-dialog.component';
-import { PilotStatusBreakInspectTableComponent } from './table/pilot-status-break-inspect-table/pilot-status-break-inspect-table.component';
-import { PilotStatusFlowerInspectTableComponent } from './table/pilot-status-flower-inspect-table/pilot-status-flower-inspect-table.component';
 
 @NgModule({
   declarations: [
@@ -65,15 +58,8 @@ import { PilotStatusFlowerInspectTableComponent } from './table/pilot-status-flo
     PilotOrderChangeOrderComponent,
     PilotOrderReturnComponent,
     PilotOrderContinueShipComponent,
-    PilotOrderContinueShipTableComponent,
-    PilotOrderChangeOrderTableComponent,
-    PilotOrderReturnTableComponent,
     LeaveDialogComponent,
-    BreakDialogComponent,
-    PilotStatusLeaveTableComponent,
-    PilotStatusBreakTableComponent,
-    PilotStatusBreakInspectTableComponent,
-    PilotStatusFlowerInspectTableComponent
+    BreakDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -108,8 +94,6 @@ import { PilotStatusFlowerInspectTableComponent } from './table/pilot-status-flo
     PilotOrderContinueShipComponent,
     LeaveDialogComponent,
     BreakDialogComponent,
-    PilotStatusBreakInspectTableComponent,
-    PilotStatusFlowerInspectTableComponent
   ],
   providers: [ConfigLogService, InformationService, PilotOrderService, PilotStatusService],
   bootstrap: [AppComponent]

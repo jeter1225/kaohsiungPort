@@ -1,0 +1,35 @@
+.PilotStatusLeaveTable {
+    width: 80%;
+    margin: 20px auto;
+    height: 50%;
+    overflow: auto;
+    padding: 1em;
+    border: 0.5em;
+}
+
+table {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hide{
+    display: none;
+}
+td.load{
+    justify-content: center;
+    text-align: center;
+    font-style: italic;
+}
+
+.fillin {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.fillin-butt {
+    margin: 5px;
+}
+
