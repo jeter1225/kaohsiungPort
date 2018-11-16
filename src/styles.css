@@ -15,10 +15,6 @@ body { margin: 0; font-family: 'Roboto', sans-serif; }
     left: 70%;
 }
 
-.mat-select.mat-select-placeholder {
-    color: white;
-}
-
 .mat-select-content {
     background-color: #A0A1A2;
 }
@@ -27,7 +23,4 @@ body { margin: 0; font-family: 'Roboto', sans-serif; }
     color: white;
 }
 
-.mat-form-field-label {
-    color: white;
-}
 

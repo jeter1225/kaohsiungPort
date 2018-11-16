@@ -19,8 +19,8 @@ export class FpasswordComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(SendPasswordDialogComponent, {
-      width: '650px',
-      height: '300px'
+      width: '350px',
+      height: '150px'
     })
 
     dialogRef.afterClosed().subscribe(result => {
