@@ -1,6 +1,6 @@
 .informationTable {
     width: 100%;
-    margin: 20px auto;
+    padding: 5px 0px 0px;
     height: 70% auto;
     overflow: auto;
     box-shadow: none !important;
@@ -131,13 +131,15 @@ td.load{
     width: 32px;
 }
 
-.auto-assign-ship {
+.auto-assign-ship.mat-stroked-button {
     position: relative;
-    left: 20%;
+    left: 25%;
     background-color: #E03C26;
     color: white;
     border-radius: 0.5em 0.5em 0.5em 0.5em;
-    padding: 0.3em;
+    min-width: 1%;
+    line-height: 1.2em;
+    padding: 0.5em;
 }
 
 .mat-header-cell {
@@ -150,7 +152,7 @@ td.load{
     color: white;
     border-radius: 0.5em 0.5em 0.5em 0.5em;
     padding: 0.5em;
-    margin: 0.4em;
+    margin: 0.2em;
 }
 
 .reference-div-outside { 
@@ -166,11 +168,11 @@ td.load{
 }
 
 .link-div {
-    margin: 0.1em;
+    margin: 0.2em;
 }
 
 .search-div {
-    margin: 0.1em;
+    margin: 0.2em;
 }
 
 .search-label {
@@ -178,7 +180,7 @@ td.load{
     color: white;
     border-radius: 0.5em 0.5em 0.5em 0.5em;
     padding: 0.5em;
-    margin: 0.4em;
+    margin: 0.2em;
 }
 
 
