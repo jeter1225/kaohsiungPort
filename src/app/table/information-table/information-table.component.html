@@ -1,18 +1,17 @@
-
-<div>
-  <label class="reference-div">資訊</label>
-  <button class="reference-div" mat-stroked-button color = "primary" (click)="ebbFlowOut()">
+<div class = "link-div">
+  <label class="reference-div-info">資訊</label>
+  <button class="reference-div-outside" mat-stroked-button color = "primary" (click)="ebbFlowOut()">
       潮汐(外)
   </button>
-  <button class="reference-div" mat-stroked-button color = "primary" (click)="ebbFlowIn()">
+  <button class="reference-div-inside" mat-stroked-button color = "primary" (click)="ebbFlowIn()">
       潮汐(內)
   </button>
-  <button class="reference-div" mat-stroked-button color = "primary" (click)="windDirection()">
+  <button class="reference-div-wind" mat-stroked-button color = "primary" (click)="windDirection()">
       一、二港口風力風向、過港隧道水深及流向流速 
   </button>
 </div>
 <div class="search-div">
-  <label>搜尋</label>
+  <label class = "search-label">搜尋</label>
   <mat-form-field class="search-form-field" floatLabel = "never">
     <input matInput type = "text" [(ngModel)]="searchKey1" placeholder="船舶編號" autocomplete="off" (keyup) = "applyFilter1()">
     <button mat-button *ngIf= "searchKey1" matSuffix mat-icon-button aria-label="Clear" (click)="onSearchClear1()" >
@@ -41,7 +40,7 @@
     </button>
   </mat-form-field>
 
-  <button mat-stroked-button class = "auto-assign-ship">自動簽船</button>
+  <button mat-stroked-button class = "auto-assign-ship">執行<br>簽船</button>
 </div>
 
 <div class="mat-elevation-z8 informationTable">

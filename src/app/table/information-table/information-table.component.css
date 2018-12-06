@@ -114,8 +114,6 @@ td.load{
     border-radius: 1px;
 }
 
-
-
 .search-form-field div.mat-form-field-underline {
     display: none;
 }
@@ -135,22 +133,52 @@ td.load{
 
 .auto-assign-ship {
     position: relative;
-    left: 25%;
-}
-
-.mat-row:nth-child(even){
-    background-color: #A0A1A2;
-}
-
-.mat-row:nth-child(odd){
-    background-color: #6B8295;
+    left: 20%;
+    background-color: #E03C26;
+    color: white;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    padding: 0.3em;
 }
 
 .mat-header-cell {
-    background-color: #083150;
+    background-color: #2664B7;
     color: white;
 }
 
-.mat-cell {
+.reference-div-info {
+    background-color: #2664B7;
     color: white;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    padding: 0.5em;
+    margin: 0.4em;
 }
+
+.reference-div-outside { 
+    margin: 0.15em;
+}
+
+.reference-div-inside { 
+    margin: 0.15em;
+}
+
+.reference-div-wind { 
+    margin: 0.15em;
+}
+
+.link-div {
+    margin: 0.1em;
+}
+
+.search-div {
+    margin: 0.1em;
+}
+
+.search-label {
+    background-color: #2664B7;
+    color: white;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    padding: 0.5em;
+    margin: 0.4em;
+}
+
+

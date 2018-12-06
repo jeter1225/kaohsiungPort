@@ -4,10 +4,14 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Roboto', sans-serif; }
 
-.mat-tab-nav-bar.mat-primary .mat-ink-bar  {
-    height: 100%;
-    opacity: 0.2;
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
     width: 80%;
+    background-color: #2664B7;
+    color: white;
+}
+
+.mat-tab-nav-bar.mat-tab-link a{ 
+    text-decoration-color: white;
 }
 
 .mat-dialog-actions {

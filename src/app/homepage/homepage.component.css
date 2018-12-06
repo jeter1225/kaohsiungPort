@@ -1,1 +1,21 @@
+.seperator {
+    flex: 1 1 auto;
+}
 
+.bar-title {
+    border: 0.5em;
+    margin: 0.6em;
+}
+
+.toptoolbar {
+    background-color: white;
+}
+
+.mat-toolbar {
+    background-color: #2664B7;
+    color: white;
+}
+
+.logout-butt {
+    color: white;
+}
