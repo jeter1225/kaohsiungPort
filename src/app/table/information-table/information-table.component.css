@@ -147,6 +147,26 @@ td.load{
     color: white;
 }
 
+.reference-div-filter {
+    background-color: #2664B7;
+    color: white;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    padding: 0.5em;
+    margin: 0.2em;
+}
+
+.inbound-checkbox {
+    padding: 0.2em;
+}
+
+.outbound-checkbox {
+    padding: 0.2em;
+}
+
+.moor-checkbox {
+    padding: 0.2em;
+}
+
 .reference-div-info {
     background-color: #2664B7;
     color: white;

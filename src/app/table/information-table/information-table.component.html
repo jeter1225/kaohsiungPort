@@ -1,4 +1,15 @@
 <div class = "link-div">
+  <label class="reference-div-filter">篩選</label>
+    <mat-checkbox class = "inbound-checkbox" [(ngModel)] = "inboundCheckbox">
+      進港
+    </mat-checkbox>
+    <mat-checkbox class = "outbound-checkbox" [(ngModel)] = "outboundCheckbox">
+      出港
+    </mat-checkbox>
+    <mat-checkbox class = "mooring-checkbox" [(ngModel)] = "moorCheckbox">
+      移泊
+    </mat-checkbox>
+
   <label class="reference-div-info">資訊</label>
   <button class="reference-div-outside" mat-stroked-button color = "primary" (click)="ebbFlowOut()">
       潮汐(外)
@@ -10,6 +21,7 @@
       一、二港口風力風向、過港隧道水深及流向流速 
   </button>
 </div>
+
 <div class="search-div">
   <label class = "search-label">搜尋</label>
   <mat-form-field class="search-form-field" floatLabel = "never">

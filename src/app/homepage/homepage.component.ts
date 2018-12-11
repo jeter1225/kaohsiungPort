@@ -21,7 +21,7 @@ export class HomepageComponent implements OnInit {
   ngOnInit() {
   }
 
-  navLinks = [{label: '最新船舶資訊', path: 'information'},{label: '引水人當班狀態', path: 'status'},{label: '引水人排班順位', path: 'order'}]
+  navLinks = [{label: '最新船舶資訊', path: 'information'}]
 
   openLogoutDialog() {
     this.repeatLogout = !this.repeatLogout;
