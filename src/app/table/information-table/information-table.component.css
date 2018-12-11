@@ -1,11 +1,15 @@
 .informationTable {
     width: 100%;
-    margin: 5px 0px 0px;
+    margin: 0px 0px 0px;
     height: 70% auto;
     overflow: auto;
     box-shadow: none !important;
 }
 
+.filterSearchLink{
+
+    margin: 16px 0px 0px;
+}
 table{
     width: 100%;
 }
@@ -130,16 +134,18 @@ td.load{
     height: 32px;
     width: 32px;
 }
-
+.all{
+    float: left;
+}
 .auto-assign-ship.mat-stroked-button {
-    position: relative;
-    left: 25%;
+    left: 28%;
+    
     background-color: #E03C26;
     color: white;
     border-radius: 0.5em 0.5em 0.5em 0.5em;
     min-width: 1%;
     line-height: 1.2em;
-    padding: 0.5em;
+    padding: 0.6em;
 }
 
 .mat-header-cell {
