@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator, MatTableDataSource} from '@angular/material';
+import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { InformationService } from '../../service-summary/information-service.service';
 import { filter } from 'rxjs/operators';
 
@@ -31,7 +31,6 @@ export class InformationTableComponent implements OnInit {
       this.dataSource = new MatTableDataSource();
       this.dataSource.paginator = this.paginator;
       this.informationService.getInformation().subscribe(information_table_list => this.dataSource.data = information_table_list);
-      setTimeout(() => {console.log(this.dataSource.data)}, 3000);
       this.dataSource.filterPredicate = (data, filter: string) => {
         const filters = JSON.parse(filter);
         return data.vslNumber.toLowerCase().includes(filters.vslNumber) 

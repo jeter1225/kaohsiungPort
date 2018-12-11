@@ -25,6 +25,22 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { LogoutComponent } from './dialog-summary/logout/logout.component';
+import { PilotStatusComponent } from './pilot-status/pilot-status.component';
+import { LeaveComponent } from './table/leave/leave.component';
+import { WorkingComponent } from './table/working/working.component';
+import { AssignedComponent } from './table/assigned/assigned.component';
+import { BreakComponent } from './table/break/break.component';
+import { ContinueWorkComponent } from './table/continue-work/continue-work.component';
+import { FurloughComponent } from './table/furlough/furlough.component';
+import { WaitingComponent } from './table/waiting/waiting.component';
+import { UnscheduleComponent } from './table/unschedule/unschedule.component';
+import { BreakService } from './service-summary/break.service';
+import { FurloughService } from './service-summary/furlough.service';
+import { LeaveService } from './service-summary/leave.service';
+import { StatusService } from './service-summary/status.service';
+import { UnscheduleService } from './service-summary/unschedule.service';
+import { WaitingService } from './service-summary/waiting.service';
+import { WorkingService } from './service-summary/working.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +51,16 @@ import { LogoutComponent } from './dialog-summary/logout/logout.component';
     InformationComponent,
     InformationTableComponent,
     SendPasswordDialogComponent,
-    LogoutComponent
+    LogoutComponent,
+    PilotStatusComponent,
+    LeaveComponent,
+    WorkingComponent,
+    AssignedComponent,
+    BreakComponent,
+    ContinueWorkComponent,
+    FurloughComponent,
+    WaitingComponent,
+    UnscheduleComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +89,15 @@ import { LogoutComponent } from './dialog-summary/logout/logout.component';
     SendPasswordDialogComponent,
     LogoutComponent,
   ],
-  providers: [ConfigLogService, InformationService],
+  providers: [ConfigLogService, 
+              InformationService, 
+              BreakService, 
+              FurloughService, 
+              LeaveService, 
+              StatusService, 
+              UnscheduleService, 
+              WaitingService, 
+              WorkingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

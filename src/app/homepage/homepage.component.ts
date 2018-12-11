@@ -21,7 +21,7 @@ export class HomepageComponent implements OnInit {
   ngOnInit() {
   }
 
-  navLinks = [{label: '最新船舶資訊', path: 'information'}]
+  navLinks = [{label: '最新船舶資訊', path: 'information'}, {label: '引水人當班狀態', path: 'pilot-status'}]
 
   openLogoutDialog() {
     this.repeatLogout = !this.repeatLogout;
@@ -29,7 +29,7 @@ export class HomepageComponent implements OnInit {
       const dialogRef = this.dialog.open(LogoutComponent, {
         width: '300px',
         height: '150px',
-        hasBackdrop: false,
+        hasBackdrop: false
       })
       dialogRef.updatePosition({top: '11%', right: '1%'});
       dialogRef.afterClosed().subscribe(result => {
