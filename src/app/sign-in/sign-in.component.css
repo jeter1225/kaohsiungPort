@@ -1,6 +1,30 @@
 a button {
 	text-decoration: none;
 }
+
 .example-full-width{
 	width: 20%;
 }
+
+.username {
+	margin: 0.3em;
+	position: relative;
+	left: 40%;
+	top: 40%;
+	width: 50%;
+}
+
+.password {
+	margin: 0.3em;
+	position: relative;
+	left: 40%;
+	top: 60%;
+	width: 50%;
+}
+
+.loginError {
+	position: relative;
+	left: 42%;
+}
+
+

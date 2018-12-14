@@ -18,7 +18,8 @@ export class StatusService {
   	this.http.get<any>(this.statusUrl)
   	.pipe(
   		tap(status_info_list => this.dataSource = status_info_list),
-  		catchError(this.handleError('getStatusInfo--Error', []))
+      catchError(this.handleError('getStatusInfo--Error', [])),
+      tap(_ => console.log("work!"))
   	);
   }
 

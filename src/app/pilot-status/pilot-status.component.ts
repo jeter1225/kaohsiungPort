@@ -11,7 +11,7 @@ export class PilotStatusComponent implements OnInit {
   constructor( private statusService: StatusService ) { }
 
   ngOnInit() {
-    
+    this.statusService.getStatusInfo();
   }
 
 }
