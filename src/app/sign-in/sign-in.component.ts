@@ -14,8 +14,9 @@ export class SignInComponent implements OnInit {
 
   accountValue: string = "";
   passwordValue: string = "";
-  getToken: any = "";
+  getToken: any;
   loginError: boolean = false;
+  identity: any;
   
   constructor(
     private router: Router, 
@@ -45,14 +46,23 @@ export class SignInComponent implements OnInit {
   checkLog() {
     this.authenService.login(this.accountValue, this.passwordValue)
     .subscribe(token => {
-               this.getToken = token
+               this.getToken = token,
                console.log(this.getToken)
               });
-    setTimeout((_ => this.login()), 1100);
+    setTimeout((_ => this.checkId()), 1200);
+  }
+
+  checkId() {
+    this.authenService.checkIdentity(this.getToken)
+    .subscribe(identity => {
+               this.identity = identity,
+               console.log(this.identity)
+              });
+    setTimeout((_ => this.login()), 1200);
   }
 
   login() {
-    if(this.getToken != "") {
+    if(this.identity.auth == "frontDesk") {
       this.loginError = false;
       this.router.navigate(['homepage/information']);
       this.statusService.sendToken(this.getToken);

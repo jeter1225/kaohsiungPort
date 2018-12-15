@@ -7,12 +7,15 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthenService {
-
   constructor( private http: HttpClient ) { }
 
-  private authenUrl = "https://fleet-geode-218517.appspot.com/api-token-auth/";
+  private accountInput: string;
+  private authenUrl = "https://fleet-geode-218517.appspot.com/api/token/";
+  private userUrl = "https://fleet-geode-218517.appspot.com/api/user/";
+  private authenUrl2: string;
 
   login(account: string, password: string): Observable<any> {
+    this.accountInput = account;
     let postUser = {
       "username": account,
       "password": password
@@ -28,6 +31,24 @@ export class AuthenService {
            .pipe(
               tap(data => console.log(data)),
               catchError(this.handleError('Connection Error when trying to authentication!', []))
+           );
+  }
+
+  checkIdentity(token: any): Observable<any> {
+    this.authenUrl2 = this.userUrl.concat(this.accountInput);
+    console.log(`Bearer ${token.access}`);
+
+    let postToken = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token.access}`
+      })
+    };
+
+    return this.http.get<any>(this.authenUrl2, postToken)
+           .pipe(
+              tap(data => console.log(data)),
+              catchError(this.handleError('Connection Error when trying to check identity!', []))
            );
   }
 

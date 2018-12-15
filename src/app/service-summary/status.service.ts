@@ -17,7 +17,7 @@ export class StatusService {
     private http: HttpClient
     ) { }
   
-  sendToken(token: string) {
+  sendToken(token: any) {
     this.tok = token;
   }
 
@@ -25,17 +25,15 @@ export class StatusService {
     return this.tok;
   }
 
-  postToken(): Observable<any> {
-    let postToken = {
-      "token": this.tok
-    }
-
+  getData(): Observable<any> {
     let postHeaders = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': this.tok.access
       })
     };
-    return this.http.post<any>(this.statusUrl, JSON.stringify(postToken), postHeaders)
+
+    return this.http.get<any>(this.statusUrl, postHeaders)
     .pipe(
       tap(checkToken => console.log("postToken--Success")),
       catchError(this.handleError('postToken--Error', []))

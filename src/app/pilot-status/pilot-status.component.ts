@@ -15,11 +15,11 @@ export class PilotStatusComponent implements OnInit {
 
   ngOnInit() {
     this.tok = this.statusService.returnToken();
-    this.statusService.postToken()
-    .subscribe(checkToken => {
-      console.log("subscribe to send token success!")
-      this.statusService.getStatusInfo();
-    });
+    // this.statusService.getData()
+    // .subscribe(checkToken => {
+    //   console.log("subscribe to send token success!")
+    //   this.statusService.getStatusInfo();
+    // });
   }
 
 }
