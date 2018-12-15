@@ -7,7 +7,8 @@
 }
 
 .filterSearchLink{
-
+    display:inline-block; 
+    width: 80%;
     margin: 16px 0px 0px;
 }
 table{
@@ -138,7 +139,6 @@ td.load{
     float: left;
 }
 .auto-assign-ship.mat-stroked-button {
-    left: 28%;
     
     background-color: #E03C26;
     color: white;
@@ -209,4 +209,6 @@ td.load{
     margin: 0.2em;
 }
 
-
+.all{
+    width:100vw;
+}

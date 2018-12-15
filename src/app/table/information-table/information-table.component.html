@@ -1,5 +1,5 @@
 <div class="all">
-  <div class="filterSearchLink column">
+  <div class="filterSearchLink">
     <div class = "link-div">
       <label class="reference-div-filter">篩選</label>
         <mat-checkbox class = "inbound-checkbox" [(ngModel)] = "inboundCheckbox">
@@ -22,9 +22,7 @@
       <button class="reference-div-wind" mat-stroked-button color = "primary" (click)="windDirection()">
           一、二港口風力風向、過港隧道水深及流向流速 
       </button>
-      <button mat-stroked-button class = "auto-assign-ship">
-          執行<br>簽船
-      </button>
+      
     </div>
     
     
@@ -59,6 +57,11 @@
       </mat-form-field>
     </div>
   </div>
+  <span>
+    <button mat-stroked-button class = "auto-assign-ship">
+      執行<br>簽船
+    </button>
+  </span>
 </div>
 
 
