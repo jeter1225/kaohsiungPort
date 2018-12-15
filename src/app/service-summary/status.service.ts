@@ -11,15 +11,45 @@ import { MatTableDataSource } from '@angular/material';
 export class StatusService {
   dataSource: MatTableDataSource<any>;
   private statusUrl = 'http://fleet-geode-218517.appspot.com/api/status/';
+  private tok: any;
 
-  constructor( private http: HttpClient ) { }
+  constructor( 
+    private http: HttpClient
+    ) { }
   
+  sendToken(token: string) {
+    this.tok = token;
+  }
+
+  returnToken() {
+    return this.tok;
+  }
+
+  postToken(): Observable<any> {
+    let postToken = {
+      "token": this.tok
+    }
+
+    let postHeaders = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.http.post<any>(this.statusUrl, JSON.stringify(postToken), postHeaders)
+    .pipe(
+      tap(checkToken => console.log("postToken--Success")),
+      catchError(this.handleError('postToken--Error', []))
+    );
+  }
+
   getStatusInfo(): void {
   	this.http.get<any>(this.statusUrl)
   	.pipe(
-  		tap(status_info_list => this.dataSource = status_info_list),
-      catchError(this.handleError('getStatusInfo--Error', [])),
-      tap(_ => console.log("work!"))
+  		tap(status_info_list => {
+        this.dataSource = status_info_list
+        console.log("work!");
+      }),
+      catchError(this.handleError('getStatusInfo--Error', []))
   	);
   }
 

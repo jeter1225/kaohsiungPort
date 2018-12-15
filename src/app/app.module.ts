@@ -7,7 +7,6 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { FpasswordComponent } from './fpassword/fpassword.component';
 import { AppRoutingModule } from './app-routing.module';
 import { InformationComponent } from './information/information.component';
-import { ConfigLogService } from './service-summary/config-log.service';
 import { InformationService } from './service-summary/information-service.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule, MatPaginatorModule, MatSortModule ,MatFormFieldModule, MatInputModule, MatIconModule} from '@angular/material';
@@ -41,6 +40,7 @@ import { StatusService } from './service-summary/status.service';
 import { UnscheduleService } from './service-summary/unschedule.service';
 import { WaitingService } from './service-summary/waiting.service';
 import { WorkingService } from './service-summary/working.service';
+import { AuthenService } from './service-summary/authen.service';
 
 @NgModule({
   declarations: [
@@ -89,15 +89,16 @@ import { WorkingService } from './service-summary/working.service';
     SendPasswordDialogComponent,
     LogoutComponent,
   ],
-  providers: [ConfigLogService, 
-              InformationService, 
+  providers: [InformationService, 
               BreakService, 
               FurloughService, 
               LeaveService, 
               StatusService, 
               UnscheduleService, 
               WaitingService, 
-              WorkingService],
+              WorkingService,
+              AuthenService
+             ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

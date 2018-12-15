@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
 import { StatusService } from '../service-summary/status.service';
+import { Component, OnInit, Output } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Injectable } from '@angular/core';
 
 @Component({
   selector: 'app-pilot-status',
@@ -7,11 +9,17 @@ import { StatusService } from '../service-summary/status.service';
   styleUrls: ['./pilot-status.component.css']
 })
 export class PilotStatusComponent implements OnInit {
+  private tok: any;
 
   constructor( private statusService: StatusService ) { }
 
   ngOnInit() {
-    this.statusService.getStatusInfo();
+    this.tok = this.statusService.returnToken();
+    this.statusService.postToken()
+    .subscribe(checkToken => {
+      console.log("subscribe to send token success!")
+      this.statusService.getStatusInfo();
+    });
   }
 
 }
