@@ -29,7 +29,7 @@ export class AuthenService {
 
     return this.http.post<any>(this.authenUrl, JSON.stringify(postUser), postHeaders)
            .pipe(
-              tap(data => console.log(data)),
+              tap(data => console.log("Get token Success!")),
               catchError(this.handleError('Connection Error when trying to authentication!', []))
            );
   }
@@ -47,7 +47,7 @@ export class AuthenService {
 
     return this.http.get<any>(this.authenUrl2, postToken)
            .pipe(
-              tap(data => console.log(data)),
+              tap(data => console.log("Check identity success!")),
               catchError(this.handleError('Connection Error when trying to check identity!', []))
            );
   }

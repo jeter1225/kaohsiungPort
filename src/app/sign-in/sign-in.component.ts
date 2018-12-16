@@ -45,19 +45,17 @@ export class SignInComponent implements OnInit {
 
   checkLog() {
     this.authenService.login(this.accountValue, this.passwordValue)
-    .subscribe(token => {
-               this.getToken = token,
-               console.log(this.getToken)
-              });
+    .subscribe(
+      token => this.getToken = token,
+    );
     setTimeout((_ => this.checkId()), 1200);
   }
 
   checkId() {
     this.authenService.checkIdentity(this.getToken)
-    .subscribe(identity => {
-               this.identity = identity,
-               console.log(this.identity)
-              });
+    .subscribe(
+      identity => this.identity = identity,
+    );
     setTimeout((_ => this.login()), 1200);
   }
 
@@ -68,7 +66,7 @@ export class SignInComponent implements OnInit {
       this.statusService.sendToken(this.getToken);
     }
     else {
-      console.log("Did not get token!");
+      console.log("You are not front desk!");
       this.loginError = true;
     }
   }
