@@ -13,7 +13,7 @@ export class InformationTableComponent implements OnInit {
   searchKey1: string;
   searchKey2: string;
   searchKey3: string;
-  searchKey4: string;\
+  searchKey4: string;
   
 
   filterJson = {vslNumber: '',vslName:'', mooringInTransferOut:'', agentCodeName:''};
