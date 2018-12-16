@@ -42,6 +42,7 @@ import { WaitingService } from './service-summary/waiting.service';
 import { WorkingService } from './service-summary/working.service';
 import { AuthenService } from './service-summary/authen.service';
 import { Global } from './global';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { Global } from './global';
     UnscheduleComponent
   ],
   imports: [
+    NgbModule,
     BrowserModule,
     AppRoutingModule,
     MatIconModule,

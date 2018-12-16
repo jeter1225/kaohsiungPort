@@ -2,6 +2,7 @@ import { StatusService } from '../service-summary/status.service';
 import { Component, OnInit, Output } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Injectable } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-pilot-status',
