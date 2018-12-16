@@ -67,7 +67,6 @@ export class SignInComponent implements OnInit {
     if(this.identity.auth == "frontDesk") {
       this.loginError = false;
       this.router.navigate(['homepage/information']);
-      this.statusService.sendToken(this.getToken);
     }
     else {
       console.log("You are not front desk!");

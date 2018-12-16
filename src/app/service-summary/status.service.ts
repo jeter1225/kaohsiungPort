@@ -19,31 +19,8 @@ export class StatusService {
 
   private statusUrl = this.global.statusUrl;
   private tok: any;
-  
-  sendToken(token: any) {
-    this.tok = token;
-  }
-
-  returnToken() {
-    return this.tok;
-  }
 
   getData(): Observable<any> {
-    let postHeaders = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${this.global.token}`
-      })
-    };
-
-    return this.http.get<any>(this.statusUrl, postHeaders)
-    .pipe(
-      tap(checkToken => console.log("postToken--Success")),
-      catchError(this.handleError('postToken--Error', []))
-    );
-  }
-
-  getStatusInfo(): void {
     let postToken = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -51,13 +28,10 @@ export class StatusService {
       })
     };
 
-  	this.http.get<any>(this.statusUrl)
+  	return this.http.get<any>(this.statusUrl, postToken)
   	.pipe(
-  		tap(status_info_list => {
-        this.dataSource = status_info_list
-        console.log("work!");
-      }),
-      catchError(this.handleError('getStatusInfo--Error', []))
+  		tap(status_info_list => this.dataSource = status_info_list),
+      catchError(this.handleError('Get status data fail!', []))
   	);
   }
 
