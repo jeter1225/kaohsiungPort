@@ -1,7 +1,8 @@
 import { StatusService } from '../service-summary/status.service';
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Injectable } from '@angular/core';
+import { MatPaginator, MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-pilot-status',
@@ -9,17 +10,19 @@ import { Injectable } from '@angular/core';
   styleUrls: ['./pilot-status.component.css']
 })
 export class PilotStatusComponent implements OnInit {
-  private tok: any;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  dataSource: MatTableDataSource<any>;
 
   constructor( private statusService: StatusService ) { }
 
   ngOnInit() {
-    this.tok = this.statusService.returnToken();
-    // this.statusService.getData()
-    // .subscribe(checkToken => {
-    //   console.log("subscribe to send token success!")
-    //   this.statusService.getStatusInfo();
-    // });
+    this.dataSource = new MatTableDataSource();
+    this.dataSource.paginator = this.paginator;
+    this.statusService.getData()
+    .subscribe(checkToken => {
+      this.dataSource = checkToken,
+      console.log("Get status data success!")
+    });
   }
 
 }
