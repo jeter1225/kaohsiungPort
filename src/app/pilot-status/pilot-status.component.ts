@@ -17,6 +17,8 @@ export interface dataType {
 }
 
 
+
+
 @Component({
   selector: 'app-pilot-status',
   templateUrl: './pilot-status.component.html',
@@ -43,6 +45,7 @@ export class PilotStatusComponent implements OnInit {
       //this.divideData();
     });
   }
+
 
   // divideData() {
   //   let len = this.dataSource.data.length;

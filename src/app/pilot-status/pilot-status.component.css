@@ -1,5 +1,22 @@
-.mat-grid-tile{
+.body{
+    background-color: #2664B7;
+}
+mat-grid-tile{
     border: #2664B7 solid 2px;
-    
     border-radius:12px;
+}
+mat-grid-tile.furlough {
+    background: #D2D7DC;
+}
+mat-grid-tile.break {
+    background: #D2D7DC;
+}
+mat-grid-tile.unschedule {
+    background: #D2D7DC;
+}
+mat-grid-tile.continue {
+    background: #D2D7DC;
+}
+mat-grid-tile.leave {
+    background: #D2D7DC;
 }
