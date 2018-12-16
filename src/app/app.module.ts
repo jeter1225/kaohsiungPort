@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { InformationComponent } from './information/information.component';
 import { InformationService } from './service-summary/information-service.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTableModule, MatPaginatorModule, MatSortModule ,MatFormFieldModule, MatInputModule, MatIconModule} from '@angular/material';
+import { MatTableModule, MatPaginatorModule, MatSortModule ,MatFormFieldModule, MatInputModule, MatIconModule, MatGridListModule } from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatRadioModule } from '@angular/material/radio';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -42,7 +42,6 @@ import { WaitingService } from './service-summary/waiting.service';
 import { WorkingService } from './service-summary/working.service';
 import { AuthenService } from './service-summary/authen.service';
 import { Global } from './global';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -65,7 +64,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     UnscheduleComponent
   ],
   imports: [
-    NgbModule,
     BrowserModule,
     AppRoutingModule,
     MatIconModule,
@@ -86,7 +84,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatMenuModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatCardModule
+    MatCardModule,
+    MatGridListModule
   ],
   entryComponents: [
     SendPasswordDialogComponent,

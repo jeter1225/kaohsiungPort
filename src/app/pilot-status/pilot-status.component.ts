@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 export interface dataType {
   'my_pilot_id': string,
