@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { InformationService } from '../../service-summary/information-service.service';
 import { filter } from 'rxjs/operators';
+import { Global } from '../../global';
 
 @Component({
   selector: 'app-information-table',
@@ -24,7 +25,10 @@ export class InformationTableComponent implements OnInit {
   'frontWaterline_HinderWaterline', 'latestModifyDepartureTime_vslAge', 'anchorTime_anchorPosition_bowThruster',
   'bringCable_dispatchStation', 'previousPort_nextPort', 'guideBoatRemark'];
 
-  constructor( private informationService: InformationService) {
+  constructor( 
+    private informationService: InformationService,
+    private global: Global
+  ) {
     
   }
 

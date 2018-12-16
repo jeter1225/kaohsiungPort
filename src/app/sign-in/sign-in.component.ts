@@ -4,6 +4,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { AuthenService } from '../service-summary/authen.service';
 import { StatusService } from '../service-summary/status.service';
 import { Injectable } from '@angular/core';
+import { Global } from '../global';
 
 @Component({
   selector: 'app-sign-in',
@@ -23,7 +24,8 @@ export class SignInComponent implements OnInit {
     private route: ActivatedRoute,
     private http: HttpClient,
     private authenService: AuthenService,
-    private statusService: StatusService
+    private statusService: StatusService,
+    private global: Global
   ) { }
 
   ngOnInit() {
@@ -46,17 +48,19 @@ export class SignInComponent implements OnInit {
   checkLog() {
     this.authenService.login(this.accountValue, this.passwordValue)
     .subscribe(
-      token => this.getToken = token,
-    );
-    setTimeout((_ => this.checkId()), 1200);
+      token => {
+        this.getToken = token,
+        this.global.token = this.getToken.access
+    });
+    setTimeout((_ => this.checkId()), 1250);
   }
 
   checkId() {
-    this.authenService.checkIdentity(this.getToken)
+    this.authenService.checkIdentity()
     .subscribe(
       identity => this.identity = identity,
     );
-    setTimeout((_ => this.login()), 1200);
+    setTimeout((_ => this.login()), 1250);
   }
 
   login() {

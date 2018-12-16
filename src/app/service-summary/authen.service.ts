@@ -2,16 +2,20 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
+import { Global } from '../global';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenService {
-  constructor( private http: HttpClient ) { }
+  constructor( 
+    private http: HttpClient, 
+    private global: Global
+  ) { }
 
   private accountInput: string;
-  private authenUrl = "https://fleet-geode-218517.appspot.com/api/token/";
-  private userUrl = "https://fleet-geode-218517.appspot.com/api/user/";
+  private authenUrl = this.global.tokenUrl;
+  private userUrl = this.global.userUrl;
   private authenUrl2: string;
 
   login(account: string, password: string): Observable<any> {
@@ -34,14 +38,13 @@ export class AuthenService {
            );
   }
 
-  checkIdentity(token: any): Observable<any> {
+  checkIdentity(): Observable<any> {
     this.authenUrl2 = this.userUrl.concat(this.accountInput);
-    console.log(`Bearer ${token.access}`);
 
     let postToken = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token.access}`
+        'Authorization': `Bearer ${this.global.token}`
       })
     };
 

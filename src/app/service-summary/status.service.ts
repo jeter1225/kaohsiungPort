@@ -4,18 +4,21 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
+import { Global } from '../global';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StatusService {
   dataSource: MatTableDataSource<any>;
-  private statusUrl = 'http://fleet-geode-218517.appspot.com/api/status/';
-  private tok: any;
 
   constructor( 
-    private http: HttpClient
-    ) { }
+    private http: HttpClient,
+    private global: Global
+  ) { }
+
+  private statusUrl = this.global.statusUrl;
+  private tok: any;
   
   sendToken(token: any) {
     this.tok = token;
@@ -29,7 +32,7 @@ export class StatusService {
     let postHeaders = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': this.tok.access
+        'Authorization': `Bearer ${this.global.token}`
       })
     };
 
@@ -41,6 +44,13 @@ export class StatusService {
   }
 
   getStatusInfo(): void {
+    let postToken = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${this.global.token}`
+      })
+    };
+
   	this.http.get<any>(this.statusUrl)
   	.pipe(
   		tap(status_info_list => {
@@ -57,8 +67,5 @@ export class StatusService {
   		return of(result as T);
   	}
   }
-
-  log(message: string) {
-  	console.log(message);
-  }
+  
 }
