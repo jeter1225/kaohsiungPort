@@ -16,7 +16,10 @@ export class AssignedComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.dataSource = new MatTableDataSource();
     
+    // setTimeout((_ => this.dataSource.data = this.statusService.getAssignedData()), 2500);
+    // setTimeout((_ => console.log(this.dataSource.data)), 4000);
   }
 
 }

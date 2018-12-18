@@ -26,12 +26,6 @@ export interface dataType {
 })
 export class PilotStatusComponent implements OnInit {
   dataSource: MatTableDataSource<any>;
-  breakData: MatTableDataSource<any>;
-  furloughData: MatTableDataSource<any>;
-  leaveData: MatTableDataSource<any>;
-  unscheduleData: MatTableDataSource<any>;
-  waitingData: MatTableDataSource<any>;
-  workingData: MatTableDataSource<any>;
 
   constructor( private statusService: StatusService ) { }
 
@@ -39,20 +33,11 @@ export class PilotStatusComponent implements OnInit {
     this.dataSource = new MatTableDataSource();
     this.statusService.getData()
     .subscribe(statusData => {
-      this.dataSource = statusData,
-      console.log(this.dataSource),
+      this.dataSource.data = statusData,
       console.log("Get status data success!")
-      //this.divideData();
     });
   }
 
-
-  // divideData() {
-  //   let len = this.dataSource.data.length;
-  //   while(len > 0)
-  //   {
-  //     if()
-  //   }
-  // }
+  
 
 }

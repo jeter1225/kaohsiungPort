@@ -50,7 +50,7 @@ export class SignInComponent implements OnInit {
     .subscribe(
       token => {
         this.getToken = token,
-        this.global.token = this.getToken.access
+        this.global.setToken(this.getToken.access) 
     });
     setTimeout((_ => this.checkId()), 1250);
   }

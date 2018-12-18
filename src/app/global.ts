@@ -11,4 +11,17 @@ export class Global {
     userUrl: string = "https://fleet-geode-218517.appspot.com/api/user/";
     infoUrl: string = "http://fleet-geode-218517.appspot.com/api/event/";
     statusUrl: string = "http://fleet-geode-218517.appspot.com/api/status/";
+
+    setToken(tok: any) {
+        this.token = tok;
+        localStorage.setItem('token', this.token);
+    }
+
+    getToken() {
+        if(!this.token)
+        {
+            this.token = localStorage.getItem('token');
+        }
+        return this.token;
+    }
 }
