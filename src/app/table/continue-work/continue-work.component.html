@@ -1,0 +1,25 @@
+<h2 class = "continue-work-title">掛牌中</h2>
+<div class="mat-elevation-z8 ContinueWorkTable">
+  <table mat-table #table [dataSource]="dataSource"  aria-label="Elements">
+
+    <ng-container matColumnDef = "pilot_id_name">
+      <th mat-header-cell *matHeaderCellDef style = "text-align:center; color: #2664B7">連續帶船引水人</th>
+      <td mat-cell *matCellDef = "let row" style = "text-align:center">{{row.my_pilot_id}} {{row.my_name}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef = "ship">
+      <th mat-header-cell *matHeaderCellDef style = "text-align:center; color: #2664B7">交換船隻(船編 /噸位 /船名)</th>
+      <td mat-cell *matCellDef = "let row" style = "text-align:center">{{row.ship}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef = "affected_id_name">
+        <th mat-header-cell *matHeaderCellDef style = "text-align:center; color: #2664B7">連續休息引水人</th>
+        <td mat-cell *matCellDef = "let row" style = "text-align:center">{{row.affected_id_name}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+</div>
+

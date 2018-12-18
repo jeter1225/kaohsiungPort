@@ -1,0 +1,28 @@
+.WaitingTable {
+    box-shadow: none;
+}
+
+.mat-column-pilot_id_name {
+    width: 30%;
+    min-width: 150px;
+}
+
+.mat-column-time {
+    width: 40%;
+    min-width: 200px;
+}
+
+.mat-column-break {
+    width: 10%;
+    min-width: 50px;
+}
+
+.mat-column-unschedule {
+    width: 20%;
+    min-width: 100px;
+}
+
+.waiting-title {
+    text-align: center;
+    color: #2664B7;
+}

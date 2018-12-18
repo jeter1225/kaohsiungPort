@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator, MatTableDataSource } from '@angular/material';
+import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material';
 import { StatusService } from '../../service-summary/status.service';
 
 @Component({
@@ -8,18 +8,17 @@ import { StatusService } from '../../service-summary/status.service';
   styleUrls: ['./assigned.component.css']
 })
 export class AssignedComponent implements OnInit {
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-
   dataSource: MatTableDataSource<any>;
+
+  displayedColumns = ['pilot_id_name', 'ship'];
+
   constructor( 
     private statusService: StatusService
   ) { }
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource();
-    
-    // setTimeout((_ => this.dataSource.data = this.statusService.getAssignedData()), 2500);
-    // setTimeout((_ => console.log(this.dataSource.data)), 4000);
+    setTimeout((_ => this.dataSource.data = this.statusService.getAssignedData()), 2000);
   }
 
 }

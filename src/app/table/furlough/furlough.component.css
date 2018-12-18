@@ -1,0 +1,18 @@
+.FurloughTable {
+    box-shadow: none;
+}
+
+.mat-column-pilot_id_name {
+    width: 60%;
+    min-width: 200px;
+}
+
+.mat-column-cancel {
+    width: 40%;
+    min-width: 200px;
+}
+
+.furlough-title {
+    text-align: center;
+    color: #2664B7;
+}

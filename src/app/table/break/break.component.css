@@ -1,0 +1,33 @@
+.BreakTable {
+    box-shadow: none;
+}
+
+.mat-column-pilot_id_name {
+    width: 30%;
+    min-width: 150px;
+}
+
+.mat-column-night_shift {
+    width: 15%;
+    min-width: 75px;
+}
+
+.mat-column-count {
+    width: 15%;
+    min-width: 75px;
+}
+
+.mat-column-time {
+    width: 20%;
+    min-width: 100px;
+}
+
+.mat-column-cancel {
+    width: 20%;
+    min-width: 100px;
+}
+
+.break-title {
+    text-align: center;
+    color: #2664B7;
+}

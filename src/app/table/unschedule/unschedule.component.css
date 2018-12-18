@@ -1,0 +1,23 @@
+.UnscheduleTable {
+    box-shadow: none;
+}
+
+.mat-column-pilot_id_name {
+    width: 50%;
+    min-width: 250px;
+}
+
+.mat-column-reason {
+    width: 30%;
+    min-width: 150px;
+}
+
+.mat-column-cancel {
+    width: 20%;
+    min-width: 100px;
+}
+
+.unschedule-title {
+    text-align: center;
+    color: #2664B7;
+}

@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { StatusService } from '../../service-summary/status.service';
-import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-working',
@@ -19,7 +18,6 @@ export class WorkingComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource();
-    
     setTimeout((_ => this.dataSource.data = this.statusService.getWorkingData()), 2000);
   }
 

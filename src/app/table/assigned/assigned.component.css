@@ -1,0 +1,18 @@
+.AssignedTable {
+    box-shadow: none;
+}
+
+.mat-column-pilot_id_name {
+    width: 30%;
+    min-width: 150px;
+}
+
+.mat-column-ship {
+    width: 70%;
+    min-width: 350px;
+}
+
+.assigned-title {
+    text-align: center;
+    color: #2664B7;
+}
