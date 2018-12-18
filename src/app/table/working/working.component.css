@@ -1,0 +1,13 @@
+.workingTable {
+    box-shadow: none;
+}
+
+.mat-column-pilot_id_name {
+    width: 30%;
+    min-width: 200px;
+}
+
+.mat-column-ship {
+    width: 70%;
+    min-width: 200px;
+}
