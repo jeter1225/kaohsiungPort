@@ -20,3 +20,7 @@ mat-grid-tile.continue {
 mat-grid-tile.leave {
     background: #D2D7DC;
 }
+mat-label{
+    color: #2664B7; 
+    font-size: 20px;
+}
