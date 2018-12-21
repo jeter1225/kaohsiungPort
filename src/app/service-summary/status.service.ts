@@ -63,7 +63,7 @@ export class StatusService {
 
   divideData() {
     let len = this.dataSource.data.length;
-    len --;
+    len -= 1;
     while(len >= 0)
     {
       switch(this.dataSource.data[len].my_status)
@@ -90,7 +90,7 @@ export class StatusService {
           this.assignedData.data.push(this.dataSource.data[len]);
           break;
       }
-      len --;
+      len -= 1;
     }
   }
 
