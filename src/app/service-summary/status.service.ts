@@ -47,7 +47,8 @@ export class StatusService {
   	return this.http.get<any>(this.statusUrl, postToken)
   	.pipe(
   		tap(status_info_list => {
-        this.dataSource.data = status_info_list
+        this.dataSource.data = status_info_list,
+        console.log(this.dataSource.data),
         this.divideData();
       }),
       catchError(this.handleError('Get status data fail!', []))
@@ -62,35 +63,36 @@ export class StatusService {
   }
 
   divideData() {
+    let cnt = 0;
     let len = this.dataSource.data.length;
     len -= 1;
-    while(len >= 0)
+    while(cnt <= len)
     {
-      switch(this.dataSource.data[len].my_status)
+      switch(this.dataSource.data[cnt].my_status)
       {
         case "工作中":
-          this.workingData.data.push(this.dataSource.data[len]);
+          this.workingData.data.push(this.dataSource.data[cnt]);
           break;
         case "待命中":
-          this.waitingData.data.push(this.dataSource.data[len]);
+          this.waitingData.data.push(this.dataSource.data[cnt]);
           break;
         case "休假中":
-          this.furloughData.data.push(this.dataSource.data[len]);
+          this.furloughData.data.push(this.dataSource.data[cnt]);
           break;
         case "請假中":
-          this.leaveData.data.push(this.dataSource.data[len]);
+          this.leaveData.data.push(this.dataSource.data[cnt]);
           break;
         case "掛牌中":
-          this.breakData.data.push(this.dataSource.data[len]);
+          this.breakData.data.push(this.dataSource.data[cnt]);
           break;
         case "暫時不排班":
-          this.unscheduleData.data.push(this.dataSource.data[len]);
+          this.unscheduleData.data.push(this.dataSource.data[cnt]);
           break;
         case "已簽船":
-          this.assignedData.data.push(this.dataSource.data[len]);
+          this.assignedData.data.push(this.dataSource.data[cnt]);
           break;
       }
-      len -= 1;
+      cnt += 1;
     }
   }
 
