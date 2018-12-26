@@ -6,19 +6,29 @@ a button {
 	width: 20%;
 }
 
-.username {
-	margin: 0.3em;
+/* .main-container {
+	width: 40%;
+	margin: 0 auto;
+} */
+
+.main-container {
 	position: relative;
+	height: 20%;
+}
+
+.username {
+	position: relative;
+	margin: 0.3em;
 	left: 40%;
-	top: 40%;
+	top: 25%;
 	width: 50%;
 }
 
 .password {
-	margin: 0.3em;
 	position: relative;
+	margin: 0.3em;
 	left: 40%;
-	top: 60%;
+	top: 25%;
 	width: 50%;
 }
 
@@ -26,5 +36,17 @@ a button {
 	position: relative;
 	left: 42%;
 }
+
+.signin-login {
+	position: relative;
+	left: 41.5%;
+	margin: 0.1em;
+}
+
+.signin-fpassword {
+	position: relative;
+	left: 43.5%;
+	margin: 0.1em;
+} 
 
 

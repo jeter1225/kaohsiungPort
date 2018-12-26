@@ -42,6 +42,9 @@ import { WaitingService } from './service-summary/waiting.service';
 import { WorkingService } from './service-summary/working.service';
 import { AuthenService } from './service-summary/authen.service';
 import { Global } from './global';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { BreakDialogComponent } from './dialog-summary/break-dialog/break-dialog.component';
+import { LeaveDialogComponent } from './dialog-summary/leave-dialog/leave-dialog.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +64,9 @@ import { Global } from './global';
     ContinueWorkComponent,
     FurloughComponent,
     WaitingComponent,
-    UnscheduleComponent
+    UnscheduleComponent,
+    BreakDialogComponent,
+    LeaveDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -85,11 +90,14 @@ import { Global } from './global';
     MatSelectModule,
     MatCheckboxModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    DragDropModule
   ],
   entryComponents: [
     SendPasswordDialogComponent,
     LogoutComponent,
+    BreakDialogComponent,
+    LeaveDialogComponent
   ],
   providers: [InformationService, 
               BreakService, 
