@@ -3,13 +3,18 @@
 }
 
 .mat-column-pilot_id_name {
-    width: 30%;
-    min-width: 150px;
+    width: 25%;
+    min-width: 125px;
 }
 
 .mat-column-ship {
-    width: 70%;
-    min-width: 350px;
+    width: 45%;
+    min-width: 225px;
+}
+
+.mat-column-return {
+    width: 30%;
+    min-width: 150px;
 }
 
 .working-title {

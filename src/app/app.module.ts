@@ -46,6 +46,12 @@ import { DialogDraggableDirectiveTitle } from './dialog-draggable.directive';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { BreakDialogComponent } from './dialog-summary/break-dialog/break-dialog.component';
 import { LeaveDialogComponent } from './dialog-summary/leave-dialog/leave-dialog.component';
+import { BreaktimeDialogComponent } from './dialog-summary/breaktime-dialog/breaktime-dialog.component';
+import { ReturnDialogComponent } from './dialog-summary/return-dialog/return-dialog.component';
+import { UnscheduleDialogComponent } from './dialog-summary/unschedule-dialog/unschedule-dialog.component';
+import { ReasonDialogComponent } from './dialog-summary/reason-dialog/reason-dialog.component';
+import { FurloughDialogComponent } from './dialog-summary/furlough-dialog/furlough-dialog.component';
+
 
 @NgModule({
   declarations: [
@@ -68,7 +74,12 @@ import { LeaveDialogComponent } from './dialog-summary/leave-dialog/leave-dialog
     UnscheduleComponent,
     BreakDialogComponent,
     LeaveDialogComponent,
-    DialogDraggableDirectiveTitle
+    DialogDraggableDirectiveTitle,
+    BreaktimeDialogComponent,
+    ReturnDialogComponent,
+    UnscheduleDialogComponent,
+    ReasonDialogComponent,
+    FurloughDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -93,13 +104,18 @@ import { LeaveDialogComponent } from './dialog-summary/leave-dialog/leave-dialog
     MatCheckboxModule,
     MatCardModule,
     MatGridListModule,
-    DragDropModule,
+    DragDropModule
   ],
   entryComponents: [
     SendPasswordDialogComponent,
     LogoutComponent,
     BreakDialogComponent,
-    LeaveDialogComponent
+    LeaveDialogComponent,
+    BreaktimeDialogComponent,
+    ReturnDialogComponent,
+    UnscheduleDialogComponent,
+    ReasonDialogComponent,
+    FurloughDialogComponent
   ],
   providers: [InformationService, 
               BreakService, 

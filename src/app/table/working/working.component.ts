@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, TemplateRef, AfterViewInit, ViewContainer
 import { MatTableDataSource } from '@angular/material';
 import { StatusService } from '../../service-summary/status.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { BreakDialogComponent } from '../../dialog-summary/break-dialog/break-dialog.component';
+import { ReturnDialogComponent } from '../../dialog-summary/return-dialog/return-dialog.component';
 
 @Component({
   selector: 'app-working',
@@ -12,15 +12,31 @@ import { BreakDialogComponent } from '../../dialog-summary/break-dialog/break-di
 export class WorkingComponent implements OnInit {
   dataSource: MatTableDataSource<any>;
 
-  displayedColumns = ['pilot_id_name', 'ship'];
+  displayedColumns = ['pilot_id_name', 'ship', 'return'];
   
   constructor( 
-    private statusService: StatusService
+    private statusService: StatusService,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource();
     setTimeout((_ => this.dataSource.data = this.statusService.getWorkingData()), 2000);
+  }
+
+  openReturnDialog(id, name) {
+    const dialogRef = this.dialog.open(ReturnDialogComponent, {
+      width: '800px',
+      height: '400px',
+      data: {
+        pilot_id: id,
+        pilot_name: name 
+      }
+    })
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The return dialog is closed!');
+    })
   }
 
   

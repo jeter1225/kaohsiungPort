@@ -10,13 +10,14 @@ import 'rxjs/add/observable/fromEvent';
 import { take } from 'rxjs/operators/take';
 
 @Component({
-  selector: 'app-break-dialog',
-  templateUrl: './break-dialog.component.html',
-  styleUrls: ['./break-dialog.component.css']
+  selector: 'app-unschedule-dialog',
+  templateUrl: './unschedule-dialog.component.html',
+  styleUrls: ['./unschedule-dialog.component.css']
 })
-export class BreakDialogComponent implements OnInit {
+export class UnscheduleDialogComponent implements OnInit {
+
   constructor(
-    private dialogRef: MatDialogRef<BreakDialogComponent>,
+    private dialogRef: MatDialogRef<UnscheduleDialogComponent>,
     private dialog: MatDialog,
     private breakService: BreakService,
     @Inject( MAT_DIALOG_DATA ) private data: any
@@ -27,4 +28,3 @@ export class BreakDialogComponent implements OnInit {
   }
 
 }
-
