@@ -2,14 +2,13 @@
 <div class = "username">
   <mat-form-field appearance = "outline">
     <mat-label>帳號</mat-label>
-    <input matInput [type] = "text" (keyup) = "returnAccount($event)">
+    <input matInput type = "text" (keyup) = "returnAccount($event)">
   </mat-form-field>
 </div>
 <div class = "password">
   <mat-form-field appearance = "outline">
     <mat-label>密碼</mat-label>
-    <input matInput [type] = "hide ? 'password' : 'text' " (keyup) = "returnPass($event)">
-    <mat-icon matSuffix (click) = "hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    <input matInput type = "password" (keyup) = "returnPass($event)">
   </mat-form-field>
 </div>
 <mat-error class = "loginError" *ngIf = "loginError"><strong>帳號或密碼輸入錯誤！</strong></mat-error>

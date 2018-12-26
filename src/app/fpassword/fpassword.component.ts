@@ -14,7 +14,7 @@ export class FpasswordComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private location: Location,
-    public dialog: MatDialog
+    private dialog: MatDialog
   ) { }
 
   openDialog(): void {

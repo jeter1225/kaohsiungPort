@@ -42,6 +42,7 @@ import { WaitingService } from './service-summary/waiting.service';
 import { WorkingService } from './service-summary/working.service';
 import { AuthenService } from './service-summary/authen.service';
 import { Global } from './global';
+import { DialogDraggableDirectiveTitle } from './dialog-draggable.directive';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { BreakDialogComponent } from './dialog-summary/break-dialog/break-dialog.component';
 import { LeaveDialogComponent } from './dialog-summary/leave-dialog/leave-dialog.component';
@@ -66,7 +67,8 @@ import { LeaveDialogComponent } from './dialog-summary/leave-dialog/leave-dialog
     WaitingComponent,
     UnscheduleComponent,
     BreakDialogComponent,
-    LeaveDialogComponent
+    LeaveDialogComponent,
+    DialogDraggableDirectiveTitle
   ],
   imports: [
     BrowserModule,
@@ -91,7 +93,7 @@ import { LeaveDialogComponent } from './dialog-summary/leave-dialog/leave-dialog
     MatCheckboxModule,
     MatCardModule,
     MatGridListModule,
-    DragDropModule
+    DragDropModule,
   ],
   entryComponents: [
     SendPasswordDialogComponent,
