@@ -48,7 +48,8 @@ export class StatusService {
   	.pipe(
   		tap(status_info_list => {
         this.dataSource.data = status_info_list,
-        this.divideData();
+        this.divideData()
+        //console.log(this.dataSource.data)
       }),
       catchError(this.handleError('Get status data fail!', []))
   	);
