@@ -34,7 +34,7 @@ export class PilotStatusComponent implements OnInit {
     this.statusService.getData()
     .subscribe(statusData => {
       this.dataSource.data = statusData,
-      console.log("Get status data success!")
+      console.log('Get status data success!')
     });
   }
 

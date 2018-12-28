@@ -113,7 +113,7 @@ td.load{
 }
 
 .search-form-field{
-    width: 15%;
+    width: 22%;
     margin-left: 5px;
     padding: 1px 5px;
     border-radius: 1px;
@@ -146,6 +146,8 @@ td.load{
     min-width: 1%;
     line-height: 1.2em;
     padding: 0.6em;
+    margin: 2em;
+    float:right;
 }
 
 .mat-header-cell {

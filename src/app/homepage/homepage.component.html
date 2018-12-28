@@ -6,12 +6,13 @@
         *ngFor="let link of navLinks"
         [routerLink]="link.path"
         routerLinkActive #rla="routerLinkActive"
-        [active]="rla.isActive">
+        [active]="rla.isActive"
+        style="color:white;">
         {{link.label}}
       </a>
     </nav>
   <span class = "seperator"></span>
-  <button class = "logout-butt" mat-mini-fab (click) = "openLogoutDialog()">
+  <button class = "logout-butt" mat-mini-fab color="primary" (click) = "openLogoutDialog()">
       元均
   </button>
 </mat-toolbar>

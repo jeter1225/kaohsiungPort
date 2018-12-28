@@ -19,7 +19,7 @@ export class InformationService {
 		let postToken = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${this.global.token}`
+        'Authorization': `Bearer ${this.global.getToken()}`
       })
 		};
 		

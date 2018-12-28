@@ -1,32 +1,32 @@
-<div class="all">
+<div class="all" >
   <div class="filterSearchLink">
-    <div class = "link-div">
+    <div class = "link-div" style="margin-left:1%">
       <label class="reference-div-filter">篩選</label>
-        <mat-checkbox class = "inbound-checkbox" [(ngModel)] = "inboundCheckbox">
+        <mat-checkbox class = "inbound-checkbox" style="margin-left:1%" (click)="applyFilter('in')">
           進港
         </mat-checkbox>
-        <mat-checkbox class = "outbound-checkbox" [(ngModel)] = "outboundCheckbox">
+        <mat-checkbox class = "outbound-checkbox" style="margin-left:1%" (click)="applyFilter('out')">
           出港
         </mat-checkbox>
-        <mat-checkbox class = "mooring-checkbox" [(ngModel)] = "moorCheckbox">
+        <mat-checkbox class = "mooring-checkbox" style="margin-left:1%" (click)="applyFilter('moor')">
           移泊
         </mat-checkbox>
     
-      <label class="reference-div-info">資訊</label>
-      <button class="reference-div-outside" mat-stroked-button color = "primary" (click)="ebbFlowOut()">
+      <label class="reference-div-info" style="margin-left:1%">資訊</label>
+      <button mat-raised-button class="reference-div-outside" style="margin-left:1%" (click)="ebbFlowOut()">
           潮汐(外)
       </button>
-      <button class="reference-div-inside" mat-stroked-button color = "primary" (click)="ebbFlowIn()">
+      <button mat-raised-button class="reference-div-inside" style="margin-left:1%" (click)="ebbFlowIn()">
           潮汐(內)
       </button>
-      <button class="reference-div-wind" mat-stroked-button color = "primary" (click)="windDirection()">
+      <button mat-raised-button class="reference-div-wind" style="margin-left:1%" (click)="windDirection()">
           一、二港口風力風向、過港隧道水深及流向流速 
       </button>
       
     </div>
     
     
-    <div class="search-div">
+    <div class="search-div" style="width:90vw; margin-left:1%">
       <label class = "search-label">搜尋</label>
       <mat-form-field class="search-form-field" floatLabel = "never">
         <input matInput type = "text" [(ngModel)]="searchKey1" placeholder="船舶編號" autocomplete="off" (keyup) = "applyFilter1()">
@@ -66,14 +66,14 @@
 
 
 
-<div class="mat-elevation-z8 informationTable">
+<div class="mat-elevation-z8 informationTable" >
   <table mat-table #table [dataSource]="dataSource"  aria-label="Elements">
 
     <!-- applyTime_vslSituation_serialNumber -->
 
     <ng-container matColumnDef="applyTime_vslSituation_serialNumber" sticky>
       <th mat-header-cell *matHeaderCellDef style="text-align:center">申請時間<br style="text-align:center">航況/序號</th>
-      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.applyTime}}dddd<br>{{row.vslSituation}}<br>{{row.serialNumber}}</td>
+      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.applyTime.substring(0,16).replace('T',' ')}}<br>{{row.vslSituation}}/{{row.serialNumber}}</td>
     </ng-container>
 
     <!-- vslName Column -->
@@ -87,14 +87,14 @@
 
     <ng-container matColumnDef="pilot">
       <th mat-header-cell *matHeaderCellDef style="text-align:center">引水人</th>
-      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.pilot1}}{{row.pilot2}}</td>
+      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.pilot1}}/{{row.pilot2}}</td>
     </ng-container>
 
     <!-- vslNumber_voyage_mooringInTransferOut Column -->
 
     <ng-container matColumnDef="vslNumber_voyage_mooringInTransferOut">
       <th mat-header-cell *matHeaderCellDef style="text-align:center">船編/航次<br style="text-align:center">靠地(頭尾纜)</th>
-      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.vslNumber}}/{{row.voyage}}/{{row.vsl_from_to}}</td>
+      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.vslNumber}}/{{row.voyage}}<br>{{row.vsl_from_to}}</td>
     </ng-container>
 
     <!-- status_pilotNumber_way_nearSpan Column -->
@@ -122,7 +122,7 @@
 
     <ng-container matColumnDef="departureTime_ETA">
       <th mat-header-cell *matHeaderCellDef style="text-align:center">出發時間<br style="text-align:center">船長報告ETA</th>
-      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.departureTime}}<br>{{row.ETA}}</td>
+      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.departureTime.substring(0,16).replace('T',' ')}}<br>{{row.ETA.substring(0,16).replace('T',' ')}}</td>
     </ng-container>
 
     <!-- frontWaterline_HinderWaterline Column -->
@@ -136,14 +136,14 @@
 
     <ng-container matColumnDef="latestModifyDepartureTime_vslAge">
       <th mat-header-cell *matHeaderCellDef style="text-align:center">引水時間最後修改時間<br style="text-align:center">船齡</th>
-      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.latestModifyDepartureTime}}{{row.vslAge}}</td>
+      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.latestModifyDepartureTime.substring(0,16).replace('T',' ')}}<br>{{row.vslAge}}</td>
     </ng-container>
 
     <!-- anchorTime_anchorPosition_bowThruster Column -->
 
     <ng-container matColumnDef="anchorTime_anchorPosition_bowThruster">
       <th mat-header-cell *matHeaderCellDef style="text-align:center">港外下錨時間<br style="text-align:center">港外錨位/艏推</th>
-      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.anchorTime}}<br>{{row.anchorPosition}}/{{row.anchorbowThruster}}</td>
+      <td mat-cell *matCellDef="let row" style="text-align:center">{{row.anchorTime.substring(0,16).replace('T',' ')}}<br>{{row.anchorPosition}}/{{row.anchorbowThruster}}</td>
     </ng-container>
 
     <!-- bringCable_dispatchStation Column -->
@@ -179,16 +179,6 @@
   </table>
 
 </div>
-<mat-paginator 
-  #paginator 
-  [length] = "dataSource.data.length" 
-  [pageIndex] = "1" 
-  [pageSize] = "10" 
-  class = "mat-paginator-sticky" 
-  showFirstLastButtons 
-  hidePageSize>
-</mat-paginator>
-
 
 
 

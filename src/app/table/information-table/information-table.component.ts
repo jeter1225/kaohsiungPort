@@ -15,7 +15,9 @@ export class InformationTableComponent implements OnInit {
   searchKey2: string;
   searchKey3: string;
   searchKey4: string;
-  
+  inboundCheckbox: boolean = false;
+  outboundCheckbox: boolean = false;
+  moorCheckbox: boolean = false;
 
   filterJson = {vslNumber: '',vslName:'', mooringInTransferOut:'', agentCodeName:''};
   dataSource: MatTableDataSource<any>;
@@ -25,12 +27,10 @@ export class InformationTableComponent implements OnInit {
   'frontWaterline_HinderWaterline', 'latestModifyDepartureTime_vslAge', 'anchorTime_anchorPosition_bowThruster',
   'bringCable_dispatchStation', 'previousPort_nextPort', 'guideBoatRemark'];
 
-  constructor( 
+  constructor(
     private informationService: InformationService,
     private global: Global
-  ) {
-    
-  }
+  ) {}
 
   ngOnInit() {
       this.dataSource = new MatTableDataSource();
@@ -38,12 +38,42 @@ export class InformationTableComponent implements OnInit {
       this.informationService.getInformation().subscribe(information_table_list => this.dataSource.data = information_table_list);
       this.dataSource.filterPredicate = (data, filter: string) => {
         const filters = JSON.parse(filter);
-        return data.vslNumber.toLowerCase().includes(filters.vslNumber) 
+        let check =  data.vslNumber.toLowerCase().includes(filters.vslNumber) 
                && (data.vslName_chi.includes(filters.vslName) || data.vslName_eng.toLowerCase().includes(filters.vslName)) 
                && data.vsl_from_to.toLowerCase().includes(filters.mooringInTransferOut) 
-               && data.agentCodeName.toLowerCase().includes(filters.agentCodeName) ;
-      }
-    };
+               && data.agentCodeName.toLowerCase().includes(filters.agentCodeName);
+        if (this.inboundCheckbox && this.outboundCheckbox && this.moorCheckbox) {
+          console.log('all');
+          return check;
+        } else if ((!this.inboundCheckbox) && (!this.outboundCheckbox) && (!this.moorCheckbox)) {
+          console.log('not');
+          return check;
+        } else {
+          console.log('else');
+          if (!this.inboundCheckbox) { check = check && (data.vslSituation !== '進港'); }
+          if (!this.outboundCheckbox) { check = check && (data.vslSituation !== '出港'); }
+          if (!this.moorCheckbox) { check = check && (data.vslSituation !== '移泊'); }
+          return check;
+        }
+      };
+    }
+
+  applyFilter(change: string) {
+    switch (change) {
+      case 'in':
+        this.inboundCheckbox = !this.inboundCheckbox;
+        break;
+      case 'out':
+        this.outboundCheckbox = !this.outboundCheckbox;
+        break;
+      case 'moor':
+        this.moorCheckbox = !this.moorCheckbox;
+        break;
+      default:
+        break;
+    }
+    this.dataSource.filter = JSON.stringify(this.filterJson);
+  }
   onSearchClear1(){
     this.searchKey1= "";
     this.applyFilter1();

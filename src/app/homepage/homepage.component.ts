@@ -27,11 +27,11 @@ export class HomepageComponent implements OnInit {
     this.repeatLogout = !this.repeatLogout;
     if(this.repeatLogout) {
       const dialogRef = this.dialog.open(LogoutComponent, {
-        width: '300px',
+        width: '250px',
         height: '150px',
         hasBackdrop: false
       })
-      dialogRef.updatePosition({top: '11%', right: '1%'});
+      dialogRef.updatePosition({top: '5.5%', right: '1%'});
       dialogRef.afterClosed().subscribe(result => {
         console.log('The logout dialog is closed!');
       })

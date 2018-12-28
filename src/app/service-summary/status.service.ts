@@ -48,8 +48,8 @@ export class StatusService {
   	.pipe(
   		tap(status_info_list => {
         this.dataSource.data = status_info_list,
-        this.divideData()
-        //console.log(this.dataSource.data)
+        this.divideData(),
+        console.log('fetch info list')
       }),
       catchError(this.handleError('Get status data fail!', []))
   	);
@@ -65,6 +65,13 @@ export class StatusService {
   divideData() {
     let cnt = 0;
     let len = this.dataSource.data.length;
+    this.workingData.data = [];
+    this.waitingData.data = [];
+    this.furloughData.data = [];
+    this.leaveData.data = [];
+    this.breakData.data = [];
+    this.unscheduleData.data = [];
+    this.assignedData.data = [];
     len -= 1;
     while(cnt <= len)
     {
