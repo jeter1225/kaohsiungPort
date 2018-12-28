@@ -4,9 +4,15 @@
             <mat-label>休假</mat-label>
         </mat-grid-tile>
         <mat-grid-tile class="working" colspan="5" rowspan="3">
+            <mat-grid-tile-header style="background-color:#D2D7DC" >
+                <h1 mat-line>工作中</h1>
+            </mat-grid-tile-header>
             <app-working></app-working>
         </mat-grid-tile>
         <mat-grid-tile class="waiting" colspan="5" rowspan="5">
+            <mat-grid-tile-header style="background-color:#D2D7DC" >
+                <h1 mat-line>待命中</h1>
+            </mat-grid-tile-header>
             <app-waiting></app-waiting>
         </mat-grid-tile>
         <mat-grid-tile class="leave" colspan="2">
@@ -19,6 +25,9 @@
             <mat-label>連續帶船紀錄</mat-label>
         </mat-grid-tile>
         <mat-grid-tile class="assigned" colspan="5" rowspan="2">
+            <mat-grid-tile-header style="background-color:#D2D7DC" >
+                <h1 mat-line>已簽船</h1>
+            </mat-grid-tile-header>
             <app-assigned></app-assigned>
         </mat-grid-tile>
         <mat-grid-tile class="break" colspan="2">

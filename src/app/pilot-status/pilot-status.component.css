@@ -21,6 +21,14 @@ mat-grid-tile.leave {
     background: #D2D7DC;
 }
 mat-label{
+    text-align: center;
     color: #2664B7; 
     font-size: 20px;
+}
+h1{
+    text-align: center;
+    color: #2664B7; 
+}
+mat-grid-tile-header{
+    background: #D2D7DC;
 }
