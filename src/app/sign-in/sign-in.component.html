@@ -8,7 +8,7 @@
 <div class = "password">
   <mat-form-field appearance = "outline">
     <mat-label>密碼</mat-label>
-    <input matInput type = "password" (keyup) = "returnPass($event)">
+    <input matInput type = "password" (keyup) = "returnPass($event)"  (keydown) = "onKeyDown($event)">
   </mat-form-field>
 </div>
 <mat-error class = "loginError" *ngIf = "loginError"><strong>帳號或密碼輸入錯誤！</strong></mat-error>

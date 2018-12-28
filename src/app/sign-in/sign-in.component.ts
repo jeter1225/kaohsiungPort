@@ -73,6 +73,13 @@ export class SignInComponent implements OnInit {
       this.loginError = true;
     }
   }
+
+  onKeyDown(event) {
+    if(event.key === 'Enter')
+    {
+      this.checkLog();
+    }
+  }
   
 
 }
